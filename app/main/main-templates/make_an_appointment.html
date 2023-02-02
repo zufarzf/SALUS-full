@@ -1,0 +1,302 @@
+{% extends 'base_template/base_template.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/make_an_appointment_style.css') }}">
+{% endblock head %}
+
+
+
+{% block navbar %}
+{% if session['lang'] == 'ru' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item active_page">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Контакты</a>
+</nav>
+{% elif session['lang'] == 'en' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item active_page">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Contacts</a>
+</nav>
+{% else %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Bosh sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item active_page">Ro'yxatdan o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">Biz haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Aloqa</a>
+</nav>
+{% endif %}
+{% endblock navbar %}
+
+
+
+
+
+{% block burger_navbar %}
+<div class="burger_button-nav_bar-item__wrapper">
+    {% if session['lang'] == 'ru' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}"
+        class="nav_bar-item burger_button-nav_bar-item active_page">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Контакты</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% elif session['lang'] == 'en' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Sign
+        up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Contacts</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% else %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Bosh
+        sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}"
+        class="nav_bar-item burger_button-nav_bar-item active_page">Ro'yxatdan o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">Biz
+        haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Aloqa</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN
+            O'TISH</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% endif %}
+</div>
+{% endblock burger_navbar %}
+
+
+
+
+
+{% block content %}
+
+<main class="make_an_appointment-main">
+
+    <!-- make_an_appointment blocks container -->
+    <!-- ----------------------------------- -->
+    <div class="make_an_appointment-blocks_container">
+
+        <!-- Form container -->
+        <!-- ----------------------------------- -->
+        <div class="make_an_appointment-form_container">
+
+            <!-- Page name -->
+            <!-- ----------------------------------- -->
+            <h1 class="page_title">{{ page_title }}</h1>
+            <!-- ----------------------------------- -->
+            <!-- end Page name -->
+
+            <!-- make_an_appointment form -->
+            <!-- ----------------------------- -->
+            <form action="#" class="make_an_appointment-form" method="post">
+                <!-- ----------------------------- -->
+                <input placeholder="Имя" type="text" class="input_style make_an_appointment-form-input">
+                <!-- ----------------------------- -->
+                <input placeholder="Фамилия" type="text" class="input_style make_an_appointment-form-input">
+
+                <!-- ----------------------------- -->
+                <div class="make_an_appointment-form-selects_wrapper">
+                    <!-- Time -->
+                    <!-- ----------------------------- -->
+                    <div class="select_wrapper">
+                        <select name="" id="">
+                            <option selected disabled>Отделение</option>
+                            <option value="">Хирургия</option>
+                            <option value="">УЗИ</option>
+                            <option value="">Кардиология</option>
+                            <option value="">ЛОР</option>
+                        </select>
+                    </div>
+                    <!-- ----------------------------- -->
+                    <!-- Date -->
+                    <!-- ----------------------------- -->
+                    <div class="select_wrapper">
+                        <select name="" id="">
+                            <option selected disabled>Врачи</option>
+                            <option value="">Александор Петрович</option>
+                            <option value="">Валерия Валериевна</option>
+                            <option value="">Николай Николаевич</option>
+                            <option value="">Евгений Евгениевич</option>
+                            <option value="">Александор Петрович</option>
+                            <option value="">Валерия Валериевна</option>
+                            <option value="">Николай Николаевич</option>
+                            <option value="">Евгений Евгениевич</option>
+                        </select>
+                    </div>
+                    <!-- ----------------------------- -->
+                </div>
+                <!-- ----------------------------- -->
+
+                <!-- ----------------------------- -->
+                <p class="make_an_appointment-form-reception_schedule">Приём с 09:00 до 15:00</p>
+                <!-- ----------------------------- -->
+
+                <div class="make_an_appointment-form-datetime_wrapper">
+
+                    {% if session['lang'] == 'ru' %}
+                    <p class="make_an_appointment-form-datetime_text">Выберите удобные дату и время</p>
+                    {% elif session['lang'] == 'en' %}
+                    <p class="make_an_appointment-form-datetime_text">Choose a convenient date and time</p>
+                    {% else %}
+                    <p class="make_an_appointment-form-datetime_text">Qulay sana va vaqtni tanlang</p>
+                    {% endif %}
+                    <!-- ----------------------------- -->
+                    <div class="make_an_appointment-form-selects_wrapper">
+                        <!-- Date -->
+                        <!-- ----------------------------- -->
+                        <div class="select_wrapper">
+                            <select name="" id="">
+                                <option value="">21-01-2023</option>
+                                <option value="">22-01-2023</option>
+                                <option value="">23-01-2023</option>
+                                <option value="">24-01-2023</option>
+                                <option value="">25-01-2023</option>
+                                <option value="">26-01-2023</option>
+                                <option value="">27-01-2023</option>
+                            </select>
+                        </div>
+                        <!-- ----------------------------- -->
+                        <!-- Time -->
+                        <!-- ----------------------------- -->
+                        <div class="select_wrapper">
+                            <select name="" id="">
+                                <option value="">10:19 - 10:40</option>
+                                <option value="">10:40 - 11:30</option>
+                                <option value="">12:40 - 13:04</option>
+                                <option value="">15:20 - 16:10</option>
+                            </select>
+                        </div>
+                        <!-- ----------------------------- -->
+                    </div>
+                    <!-- ----------------------------- -->
+                </div>
+
+                <!-- ----------------------------- -->
+                <input type="submit" value="ЗАПИСАТЬСЯ" class="input_submit make_an_appointment-form-submit">
+                <!-- ----------------------------- -->
+            </form>
+            <!-- ----------------------------- -->
+            <!-- end make_an_appointment form -->
+
+
+        </div>
+        <!-- ----------------------------------- -->
+        <!-- end Form container -->
+
+    </div>
+    <!-- ----------------------------------- -->
+    <!-- end make_an_appointment blocks container -->
+
+
+</main>
+
+<div class="on_development-wrapper">
+    {% if session['lang'] == 'ru' %}
+    <h1 class="on_development">Этот раздел <br> пока на разработке</h1>
+    {% elif session['lang'] == 'en' %}
+    <h1 class="on_development">This section <br> is still under development</h1>
+    {% else %}
+    <h1 class="on_development">Ushbu bo'lim <br> hali ishlab chiqilmoqda </h1>
+    {% endif %}
+</div>
+
+<style>
+    .on_development-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(142.89deg, #ecececc9 0.85%,
+                #ffffff75 104.42%);
+        backdrop-filter: blur(12px);
+        /* ----------------------- */
+        border-radius: 9px;
+        ;
+    }
+
+    h1.on_development {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 140%;
+        color: #566E8C;
+    }
+
+    @media (max-width: 1920px) {
+        h1.on_development {
+            font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+</style>
+
+{% endblock content %}

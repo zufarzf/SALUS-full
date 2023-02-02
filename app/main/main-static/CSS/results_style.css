@@ -1,0 +1,133 @@
+/* ################################ */
+
+
+/* results blocks container */
+.results-blocks_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 50px;
+}
+
+/* end results blocks container */
+
+
+
+/* Block */
+/* ========================== */
+.results-block {
+    margin: 20px;
+}
+
+/* ========================== */
+/* End Block */
+
+
+
+
+
+/* Block - results form wrapper */
+/* ========================== */
+.results-form_wrapper {}
+
+
+
+
+/* Form container */
+/* -------------------------- */
+.results-form_container {}
+
+
+
+/* Form */
+/* -------------------------- */
+form.results-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    width: 100%;
+}
+
+/* -------------------------- */
+/* end Form */
+
+
+/* Form text */
+/* -------------------------- */
+h1.results-form_text {
+    font-family: 'Montserrat';
+    color: #566E8C;
+    max-width: 550px;
+    font-size: 20px;
+    margin-left: 1%;
+}
+
+/* -------------------------- */
+/* end Form text */
+
+
+/* -------------------------- */
+input.results-input {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* -------------------------- */
+input.results-submit {}
+
+/* -------------------------- */
+
+/* -------------------------- */
+/* end Form container */
+
+/* ========================== */
+/* end Block - results form wrapper */
+
+
+@media (max-width:1920px) {
+
+    /* results blocks container */
+    .results-blocks_container {
+        padding: calc(10px + (50 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* end results blocks container */
+
+
+    /* Block */
+    /* ========================== */
+    .results-block {
+        margin: calc(0px + (20 - 0) * ((100vw - 320px) / (1920 - 320)));
+        max-width: calc(280px + (550 - 280) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ========================== */
+    /* End Block */
+
+    h1.results-form_text {
+        font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    input.results-submit {
+        font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    input.results-input {
+        height: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320)));
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+}
+
+
+
+
+
+/* results list wrapper */
+/* ========================== */
+.results-list_wrapper {}
+
+/* ========================== */
+/* end results list wrapper */

@@ -1,0 +1,592 @@
+.hader_window {
+    overflow: visible;
+    z-index: 20;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+}
+
+/* =============================== */
+
+
+
+
+/* Logotype  */
+/* ========================= */
+.header-svg_logotype {
+    width: 63px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.header-text_logotype {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+/* ========================= */
+
+
+
+/* Nav bar */
+/* =============================== */
+.wrapper-nav_bar__buttons_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+nav.header-nav_bar {
+    margin-right: 60px;
+    display: flex;
+}
+
+/* ------------------------------- */
+a.nav_bar-item {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: 20px;
+    white-space: nowrap;
+
+    color: #506988da;
+    transition-property: color;
+    transition-duration: 0.2s;
+}
+
+a.nav_bar-item:hover {
+    color: #49b3ab;
+}
+
+a.nav_bar-item:last-child {
+    margin: 0;
+}
+
+a.active_page {
+    color: #E3AF28;
+}
+
+a.active_page:hover {
+    color: #E3AF28;
+}
+
+/* ------------------------------- */
+
+
+/* Burger nav bar */
+/* ---------------------- */
+nav.burger_button-nav_bar {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    /* ------------- */
+    border-radius: 5px;
+    min-width: 220px;
+    height: 0;
+    /* ------------- */
+    transition-property: height opacity;
+    transition-duration: 0.25s;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+nav.burger_button-nav_bar-active {
+    height: 250px;
+    opacity: 1;
+}
+
+/* --------------------------------- */
+.burger_button-nav_bar-item__wrapper {
+    display: flex;
+    flex-direction: column;
+    /* ------------- */
+    min-width: 220px;
+    border-radius: 5px;
+    padding: 20px 20px;
+    /* ------------- */
+    background: linear-gradient(142.89deg, #506988 0.85%, #506988d7 104.42%);
+    /* ------------- */
+    text-align: right;
+    transition-property: all;
+    transition-duration: 0.7s;
+    overflow: hidden;
+}
+
+a.burger_button-nav_bar-item {
+    margin: 0 0 20px 0;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+a.burger_button-nav_bar-item:last-child {
+    margin: 0;
+}
+
+nav.burger_button-nav_bar a.active_page {
+    color: #E3AF28;
+    font-weight: 500;
+}
+
+/* ================================================ */
+
+
+
+
+
+
+/* Header buttons */
+/* =============================== */
+.header-btns_wrapper {
+    display: flex;
+    align-items: center;
+    /* z-index: 1000; */
+}
+
+/* ------------------- */
+
+
+/* Lang */
+/* ----------------- */
+.header-lang_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.header-lang_wrapper_right {
+    display: none;
+}
+
+/* -------------------------------------- */
+
+
+/* Lang items list */
+/* ---------------------- */
+.header-langs__list {
+    position: absolute;
+    top: 60px;
+    left: -32px;
+    /* ------------ */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ------------ */
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    /* ------------ */
+    background: linear-gradient(142.89deg, rgba(236, 236, 236, 0.911) 0.85%,
+            rgba(217, 217, 217, 0.281) 104.42%);
+    box-shadow: 8px 5px 12px #0000001c;
+    /* ------------ */
+    overflow: hidden;
+    transition: 0.2s;
+    opacity: 0;
+    z-index: 1000;
+}
+
+/* ------------------------------------- */
+.header-langs__list-active {
+    opacity: 1;
+    height: 40px;
+    width: 90px;
+}
+
+/* ------------------------------------- */
+a.header-lang_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.header-langs__list-lang_item {
+    margin: 8px;
+}
+
+a.header-langs__list-lang_item:last-child {
+    margin-left: 8px;
+}
+
+/* ---------------------- */
+
+img.header-lang__svg {
+    width: 29px;
+    opacity: 0.86;
+    border-radius: 3px;
+}
+
+/* -------------------- */
+
+
+
+/* Enter buttons */
+/* -------------------------------------- */
+.header-enter_btns_wrapper {
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+a.header-enter {
+    background: #f7cd5bf3;
+    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    opacity: 0.87;
+
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+
+    color: #506988d3;
+    transition-property: background color;
+    transition-duration: 0.2s;
+}
+
+a.header-enter:hover {
+    background: #ffd563;
+}
+
+a.header-enter:last-child {
+    margin: 0;
+}
+
+/* ----------------------------------- */
+
+
+/* Burger button */
+/* ------------------- */
+.burger_button-enter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* ============================== */
+
+
+
+
+
+
+/* Burger button */
+/* ====================================== */
+.header-burger_button__wrapper {
+    position: relative;
+}
+
+/* -------------------------------------- */
+.burger_button {
+    display: none;
+    /* ------------ */
+    min-width: 33px;
+    min-height: 25px;
+    width: 40px;
+    height: 30px;
+    border-radius: 4px;
+    margin-left: 15px;
+    /* ------------- */
+    background: linear-gradient(95.26deg, #566e8ce3 -8.09%, #566e8cd0 99.46%);
+    /* ------------- */
+    transition: background 0.2s;
+}
+
+/* ----------------------------------------------------- */
+
+
+
+/* Button line */
+/* --------------------- */
+span.burger_button-line {
+    width: 27px;
+    height: 3px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+/* -------------------------- */
+span.burger_button-line::before,
+span.burger_button-line::after {
+    content: '';
+    display: block;
+    width: 27px;
+    height: 3px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
+span.burger_button-line::before {
+    transform: translateY(-7px);
+}
+
+span.burger_button-line::after {
+    transform: translateY(4px);
+}
+
+/* --------------------------------------------------------- */
+
+
+/* Button line active */
+/* -------------------------- */
+span.burger_button-line-active {
+    width: 20px;
+    height: 3px;
+    background: #ffffff00;
+}
+
+span.burger_button-line-active::before,
+span.burger_button-line-active::after {
+    width: 20px;
+    height: 3px;
+}
+
+/* --------------------------------------------------------------------------- */
+span.burger_button-line-active::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+span.burger_button-line-active::after {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ============================================================================== */
+
+
+
+
+
+
+/* Media */
+/* ============================================================================== */
+
+/* Max 1919 px */
+/* ---------------------------------------------------------------------------------------- */
+@media (max-width: 1919px) {
+
+    /* Logotype */
+    /* ------------------------------------------------------------------------------------ */
+    .header-svg_logotype {
+        width: calc(53px + (63 - 53) * ((100vw - 1440px) / (1920 - 320)));
+    }
+
+    .header-text_logotype {
+        font-size: calc(20px + (24 - 20) * ((100vw - 1440px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------------------------------------------------------ */
+
+    /* Nav bar */
+    /* ----------------------------------------------------------------------------------- */
+    nav.header-nav_bar {
+        margin-right: calc(30px + 30 * ((100vw - 1440px) / (1920 - 320)));
+    }
+
+    a.nav_bar-item {
+        font-size: calc(17px + (18 - 17) * ((100vw - 1440px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------------------------------------------------------ */
+
+    /* Language */
+    /* ------------------------------------------------------------------------------------ */
+    .header-lang__svg {
+        width: calc(27px + (29 - 27) * ((100vw - 1440px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------------------------------------------------------ */
+
+    /* Enter button */
+    /* ------------------------------------------------------------------------------------ */
+    a.header-enter {
+        font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 320)));
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* Logotype */
+    /* ------------------------------------------------------------------------------------ */
+    .header-svg_logotype {
+        width: 53px;
+    }
+
+    .header-text_logotype {
+        font-size: 20px;
+    }
+
+    /* ------------------------------------------------------------------------------------ */
+
+    /* Nav bar */
+    /* ----------------------------------------------------------------------------------- */
+    nav.header-nav_bar {
+        margin-right: 30px;
+    }
+
+    a.nav_bar-item {
+        font-size: 17px;
+    }
+
+    /* ------------------------------------------------------------------------------------ */
+
+    /* Language */
+    /* ------------------------------------------------------------------------------------ */
+    .header-lang__svg {
+        width: 27px;
+    }
+
+    /* ------------------------------------------------------------------------------------ */
+
+    /* Enter button */
+    /* ------------------------------------------------------------------------------------ */
+    a.header-enter {
+        font-size: 14px;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+
+/* Min 1439 px */
+/* ------------------------------------------ */
+@media (min-width: 1439px) {
+
+    /* Burger nav bar */
+    /* ------------------------------------- */
+    nav.burger_button-nav_bar {
+        display: none;
+    }
+
+    /* ------------------------------------- */
+
+    /* Burger button */
+    /* ------------------------------------- */
+    .burger_button {
+        display: none;
+    }
+}
+
+/* ------------------------------------------ */
+
+
+/* Max 1439 px */
+/* ------------------------------------------ */
+@media (max-width: 1439px) {
+
+    /* Logotype */
+    /* ---------------------------------- */
+    .header-svg_logotype {
+        width: 53px;
+    }
+
+    .header-text_logotype {
+        font-size: 20px;
+    }
+
+    /* ---------------------------------- */
+
+    /* Nav bar */
+    /* ---------------------------------- */
+    nav.header-nav_bar {
+        display: none;
+    }
+
+    a.nav_bar-item {
+        font-size: 18px;
+    }
+
+    /* ---------------------------------- */
+
+    /* Language */
+    /* ---------------------------------- */
+    .header-lang_wrapper {
+        display: block;
+        margin-left: 15px;
+    }
+
+    .header-lang_wrapper_left {
+        display: none;
+    }
+
+    .header-lang__svg {
+        width: 27px;
+    }
+
+    /* Enter button */
+    /* -------------------------------------- */
+    .header-enter_btns_wrapper {
+        margin-left: 0;
+    }
+
+    a.header-enter {
+        font-size: 14px;
+    }
+
+    /* -------------------------------------- */
+
+
+    /* Burger button */
+    /* --------------------------- */
+    .burger_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* Min 649 px */
+/* ------------------------------------------------ */
+@media (min-width: 649px) {
+
+    /* Burger nav bar */
+    /* -------------------------------------------- */
+    nav.burger_button-nav_bar-active {
+        height: 350px;
+    }
+
+    /* -------------------------------------------- */
+
+    /* Burger enter buttons */
+    /* -------------------------------------------- */
+    .burger_button-enter_btns_wrapper {
+        display: none;
+    }
+}
+
+
+
+/* Max 649 px */
+/* ----------------------------------------------- */
+@media (max-width: 649px) {
+
+    /* enter buttons */
+    /* ------------------------------------------ */
+    .header-enter_btns_wrapper {
+        display: none;
+    }
+
+    /* ------------------------------------------ */
+
+    /* Burger nav bar */
+    /* -------------------------------------------- */
+    nav.burger_button-nav_bar-active {
+        height: 550px;
+    }
+
+    /* -------------------------------------------- */
+
+    /* Burger enter buttons */
+    /* ------------------------------------- */
+    .burger_button-btn_enter {
+        display: none;
+    }
+}

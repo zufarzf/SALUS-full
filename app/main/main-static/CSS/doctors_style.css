@@ -1,0 +1,206 @@
+h1.page_title {
+    margin: 35px 0;
+}
+
+
+.doctors_container {
+    max-height: 1660px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.doctors_container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    padding-bottom: 0 0 50px 0;
+}
+
+
+/* Doctor Card */
+/* ---------------------------------- */
+.doctor_card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ---------------- */
+    height: 280px;
+    width: 230px;
+    margin: 10px;
+    border-radius: 9px;
+    background: #60e9e02d;
+}
+
+/* ---------------------------------- */
+/* end Doctor Card */
+
+
+/* Doctor photo */
+/* ---------------------------------- */
+img.doctor_photo {
+    position: absolute;
+    height: 140%;
+    opacity: 0.92;
+}
+
+/* ---------------------------------- */
+/* end Doctor photo */
+
+
+/* =================================== */
+
+
+/* Doctor info container */
+/* ---------------------------------- */
+.doctor_info_container {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    /* ----------------------- */
+    background:
+        linear-gradient(99.06deg, #60e9e080 57.31%, #68eae250 98.77%);
+    backdrop-filter: blur(17px);
+    border-radius: 9px;
+    /* ----------------------- */
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    transition: 0.5s;
+}
+
+/* ---------------------------------- */
+.doctor_card:hover .doctor_info_container {
+    height: 250px;
+}
+
+
+/* Doctor post */
+/* ---------------------------------- */
+h1.doctor_post {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 20px;
+    /* --------------- */
+    color: #566E8C;
+}
+
+/* ---------------------------------- */
+/* end Doctor post */
+
+
+/* Doctor texts + messengers wrapper */
+/* ------------------------------------- */
+.doctor_texts__messengers_wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* ------------------------- */
+    margin: 10px 0 30px 0;
+}
+
+/* ------------------------------------- */
+/* end Doctor texts + messengers wrapper */
+
+
+
+/* Doctor texts wrapper */
+/* ---------------------------------- */
+.doctor_texts_wrapper {}
+
+
+/* Doctor text */
+/* ---------------------------------- */
+.doctor_text {
+    font-weight: 500;
+    font-size: 16px;
+    margin: 6px 0;
+    /* ------------- */
+    color: #566E8C;
+}
+
+/* ---------------------------------- */
+/* end Doctor text */
+
+
+
+/* Messengers icons */
+/* ---------------------------------- */
+
+/* Doctor messengers wrapper */
+/* ---------------------------------- */
+.doctor_messengers_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+/* ---------------------------------- */
+
+
+/* Messenger icon */
+/* ---------------------------------- */
+.messenger_icon {
+    fill: #566e8cd9;
+    margin: 3px 0;
+    transition: fill 0.2s;
+    width: 25px;
+}
+
+/* ---------------------------------- */
+.messenger_icon:hover {
+    fill: #2f517c;
+}
+
+/* ---------------------------------- */
+.doctor-messenger_icon {}
+
+/* ---------------------------------- */
+/* end Messenger icon */
+
+/* ---------------------------------- */
+/* end Doctor messengers wrapper */
+
+/* ---------------------------------- */
+/* end Messengers icons */
+
+
+
+
+/* btn-Make an appointment wrapper */
+/* ---------------------------------- */
+.btn-make_an_appointment_wrapper {
+    margin: 0 auto;
+}
+
+/* ---------------------------------- */
+
+
+/* btn-Make an appointment */
+/* ---------------------------------- */
+a.btn-doctor-make_an_appointment {
+    max-width: 120px;
+    width: 50px;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+/* ---------------------------------- */
+
+
+
+@media (max-width: 1920px) {
+
+    .doctors_container {
+        max-width: calc(290px + (1660 - 290) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+}

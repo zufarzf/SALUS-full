@@ -1,0 +1,47 @@
+{% extends 'admin/master.html' %}
+
+{% block head_css %}
+  {{ super() }}
+  <link href="{{ url_for('admin_panel.static', filename='css/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="add_author_form">
+    <h1 class="add__title">Добавить услиги</h1>
+    
+    <form action="{{url_for('addser_block.addservice')}}" method="post" enctype="multipart/form-data">
+        {{ addform.hidden_tag() }}
+        <!-- ====== ====== ====== -->
+        {{ addform.meta_des.label }}
+        {{ addform.meta_des }} <br>
+
+        {{ addform.meta_key.label }}
+        {{ addform.meta_key }} <br>
+        <!-- --------------------------- -->
+        {{ addform.name.label }}
+        {{ addform.name }} <br>
+
+        {{ addform.ru_name.label }}
+        {{ addform.ru_name }} <br>
+         <!-- --------------------------- -->
+        {{ addform.en_name.label }}
+        {{ addform.en_name }} <br>
+
+        {{ addform.description.label }}
+        {{ addform.description }} <br>
+
+        {{ addform.ru_description.label }}
+        {{ addform.ru_description }} <br>
+         <!-- --------------------------- -->
+        {{ addform.en_description.label }}
+        {{ addform.en_description }} <br>
+
+        {{ addform.price.label }}
+        {{ addform.price }} <br>
+         <!-- --------------------------- -->
+        {{ addform.submit }}
+        <br><br><br>
+        {{ ckeditor.load() }}
+    </form>
+</div>
+{% endblock %}

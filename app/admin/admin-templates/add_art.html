@@ -1,0 +1,50 @@
+{% extends 'admin/master.html' %}
+
+{% block head_css %}
+  {{ super() }}
+  <link href="{{ url_for('admin_panel.static', filename='css/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="add_author_form">
+    <h1 class="add__title">Добавить статью</h1>
+    
+    <form action="{{url_for('addart_block.addart')}}" method="post" enctype="multipart/form-data">
+        {{ addform.hidden_tag() }}
+        <!-- ====== ====== ====== -->
+        {{ addform.meta_des.label }}
+        {{ addform.meta_des }} <br>
+
+        {{ addform.meta_key.label }}
+        {{ addform.meta_key }} <br>
+        <!-- --------------------------- -->
+        {{ addform.photo.label }}
+        {{ addform.photo }} <br>
+
+        {{ addform.youtube.label }}
+        {{ addform.youtube }} <br>
+         <!-- --------------------------- -->
+        {{ addform.title.label }}
+        {{ addform.title }} <br>
+
+        {{ addform.ru_title.label }}
+        {{ addform.ru_title }} <br>
+
+        {{ addform.en_title.label }}
+        {{ addform.en_title }} <br>
+         <!-- --------------------------- -->
+        {{ addform.text.label }}
+        {{ addform.text }} <br>
+
+        {{ addform.ru_text.label }}
+        {{ addform.ru_text }} <br>
+
+        {{ addform.en_text.label }}
+        {{ addform.en_text }} <br>
+         <!-- --------------------------- -->
+        {{ addform.submit }}
+        <br><br><br>
+        {{ ckeditor.load() }}
+    </form>
+</div>
+{% endblock %}

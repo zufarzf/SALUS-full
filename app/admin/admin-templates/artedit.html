@@ -1,0 +1,62 @@
+{% extends 'admin/master.html' %}
+
+{% block head_css %}
+  {{ super() }}
+  <link href="{{ url_for('admin_panel.static', filename='css/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="add_author_form">
+    <h1 class="add__title">Изменить</h1>
+
+    <form method="post" action="{{url_for('editart_block.editart')}}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <!-- ====== ====== ====== -->
+        {{ form.meta_des.label }}
+        {{ form.meta_des(value=items.meta_description) }} <br>
+
+        {{ form.meta_key.label }}
+        {{ form.meta_key(value=items.meta_keywords) }} <br>
+        <!-- --------------------------- -->
+        {% if items.photo != 'app/admin/admin-static/default/default.jpg' %}
+            {{ form.del_photo.label }}
+            {{ form.del_photo }} <br>
+        {% endif %}
+        <!-- --------------------------- -->
+        {{ form.photo.label }}
+        {{ form.photo(value=items.photo) }} <br>
+
+        {{ form.youtube.label }}
+        {{ form.youtube(value=items.youtube_link) }} <br>
+         <!-- --------------------------- -->
+        
+        {{ form.title.label }}
+        {{ form.title(value=items.title) }} <br>
+
+        {{ form.ru_title.label }}
+        {{ form.ru_title(value=items.ru_title) }} <br>
+
+        {{ form.en_title.label }}
+        {{ form.en_title(value=items.en_title) }} <br>
+         <!-- --------------------------- -->
+        {% if form.text %}
+            {{ form.text.label }}
+            {{ ckeditor.create(name='text', value=items.text) }}
+        {% endif %} <br>
+
+        {% if form.ru_text %}
+            {{ form.ru_text.label }}
+            {{ ckeditor.create(name='ru_text', value=items.ru_text) }}
+        {% endif %} <br>
+
+        {% if form.en_text %}
+            {{ form.en_text.label }}
+            {{ ckeditor.create(name='en_text', value=items.en_text) }}
+        {% endif %} <br>
+         <!-- --------------------------- -->
+        {{ form.submit }}
+        <br><br><br>
+        {{ ckeditor.load() }}
+    </form>
+</div>
+{% endblock %}

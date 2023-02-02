@@ -1,0 +1,252 @@
+{% extends 'base_template/base_template.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/services_style.css') }}">
+{% endblock head %}
+
+
+
+
+
+{% block navbar %}
+{% if session['lang'] == 'ru' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Контакты</a>
+</nav>
+{% elif session['lang'] == 'en' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Contacts</a>
+</nav>
+{% else %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Bosh sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Ro'yxatdan o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">Biz haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Aloqa</a>
+</nav>
+{% endif %}
+{% endblock navbar %}
+
+
+
+
+
+
+{% block burger_navbar %}
+<div class="burger_button-nav_bar-item__wrapper">
+    {% if session['lang'] == 'ru' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Контакты</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% elif session['lang'] == 'en' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Contacts</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% else %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Bosh
+        sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Ro'yxatdan
+        o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">Biz
+        haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Aloqa</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN
+            O'TISH</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% endif %}
+</div>
+{% endblock burger_navbar %}
+
+
+
+
+
+{% block content %}
+
+<main class="services-main">
+
+
+    <!-- Page name -->
+    <!-- ----------------------------------- -->
+    <h1 class="page_title">{{ page_title }}</h1>
+    <!-- ----------------------------------- -->
+    <!-- end Page name -->
+
+
+    <!-- ========================================== -->
+    <!-- ========================================== -->
+
+
+    <!-- Services -> sections wrapper -->
+    <!-- ----------------------------------- -->
+    <div class="services-sections_wrapper">
+
+        <!-- Services -> sections container -->
+        <!-- ----------------------------------- -->
+        <div class="services-sections_container">
+
+
+            {% for i in division %}
+            <!-- Services -> section -->
+            <!-- ----------------------------------- -->
+            <div class="services-section">
+
+                <!-- section name -->
+                <!-- ----------------------------------- -->
+                <a href="" class="services-section_name">
+                    <!-- ----------------------------------- -->
+                    <div class="services-section_name-wrapper">
+                        <!-- ----------------------------------- -->
+                        {{ i.icon | safe }}
+                        <!-- ----------------------------------- -->
+                        <h1 class="section_name">{{ i.name }}</h1>
+                        <!-- ----------------------------------- -->
+                    </div>
+                    <!-- ----------------------------------- -->
+                    <!-- <div class="services-section_name-open_wrapper">
+                            <span class="services-section_name-open"></span>
+                        </div> -->
+                    <span class="services-section_name-open"></span>
+                    <!-- ----------------------------------- -->
+                </a>
+                <!-- ----------------------------------- -->
+                <!-- end section name -->
+
+
+                <!-- Services section list -->
+                <!-- ----------------------------------- -->
+                <div class="services-section-list">
+                    <!-- ----------------------------------- -->
+                    <div class="services-section-list_wrapper">
+
+
+                        {% for service in services[i.name] %}
+
+                        <!-- Service -->
+                        <!-- ----------------------------------- -->
+                        <div class="service">
+                            <!-- ----------------------------------- -->
+                            <a href="{{ url_for('main.service_item', service_id=service.id) }}"
+                                class="service_text service_name">{{ service.name }}</a>
+                            <!-- ----------------------------------- -->
+                            {% if session['lang'] == 'ru' %}
+                            <a href="{{ url_for('main.make_an_appointment') }}" class="sign_up">записаться</a>
+                            {% elif session['lang'] == 'en' %}
+                            <a href="{{ url_for('main.make_an_appointment') }}" class="sign_up">enroll</a>
+                            {% else %}
+                            <a href="{{ url_for('main.make_an_appointment') }}" class="sign_up">yozilish</a>
+                            {% endif %}
+                            <!-- ----------------------------------- -->
+                            {% if session['lang'] == 'ru' %}
+                            <p class="service_text service_price">{{ service.price }} сум</p>
+                            {% elif session['lang'] == 'en' %}
+                            <p class="service_text service_price">{{ service.price }} som</p>
+                            {% else %}
+                            <p class="service_text service_price">{{ service.price }} UZD</p>
+                            {% endif %}
+                            <!-- ----------------------------------- -->
+                        </div>
+                        <!-- ----------------------------------- -->
+                        <!-- end Service -->
+
+                        {% endfor %}
+
+
+                    </div>
+                    <!-- ----------------------------------- -->
+                </div>
+                <!-- ----------------------------------- -->
+                <!-- end Services section list -->
+
+
+            </div>
+            <!-- ----------------------------------- -->
+            <!-- end Services -> section -->
+            {% endfor %}
+
+
+        </div>
+        <!-- ----------------------------------- -->
+        <!-- end Services -> sections container -->
+
+    </div>
+    <!-- ----------------------------------- -->
+    <!-- end Services -> sections wrapper -->
+
+
+</main>
+
+{% endblock content %}

@@ -1,0 +1,336 @@
+{% extends 'base_template/base_template.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/doctors_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/in_page-service_style.css') }}">
+{% endblock head %}
+
+
+{% block navbar %}
+{% if session['lang'] == 'ru' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Контакты</a>
+</nav>
+{% elif session['lang'] == 'en' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Contacts</a>
+</nav>
+{% else %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Bosh sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Ro'yxatdan o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">Biz haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Aloqa</a>
+</nav>
+{% endif %}
+{% endblock navbar %}
+
+
+
+{% block burger_navbar %}
+<div class="burger_button-nav_bar-item__wrapper">
+    {% if session['lang'] == 'ru' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Контакты</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% elif session['lang'] == 'en' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Contacts</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% else %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Bosh
+        sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Ro'yxatdan
+        o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">Biz
+        haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Aloqa</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN
+            O'TISH</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% endif %}
+</div>
+{% endblock burger_navbar %}
+
+
+
+{% block content %}
+<main class="service-main">
+
+    <!-- page options -->
+    <!-- ----------------------- -->
+    <div class="options_wrapper">
+        <!-- ----------------------- -->
+        <div class="site_map-wrapper">
+            {% if session['lang'] == 'ru' %}
+            <a class="site_map" href="{{ url_for('main.main_page') }}">Главная</a>
+            / <a class="site_map" href="{{ url_for('main.services') }}">Услуги</a>
+            {% elif session['lang'] == 'en' %}
+            <a class="site_map" href="{{ url_for('main.main_page') }}">Main</a>
+            / <a class="site_map" href="{{ url_for('main.services') }}">Services</a>
+            {% else %}
+            <a class="site_map" href="{{ url_for('main.main_page') }}">Bosh sahifa</a>
+            / <a class="site_map" href="{{ url_for('main.services') }}">Xizmatlar</a>
+            {% endif %}
+            / <p class="site_map">{{ item[0].name[0:21] }}...</p>
+        </div>
+        <!-- --------------------------------------------------------------------- -->
+        {% if session['lang'] == 'ru' %}
+        <a href="{{ url_for('main.make_an_appointment') }}" class="make_an_appointment-btn">записаться на приём</a>
+        {% elif session['lang'] == 'en' %}
+        <a href="{{ url_for('main.make_an_appointment') }}" class="make_an_appointment-btn">make an appointment</a>
+        {% else %}
+        <a href="{{ url_for('main.make_an_appointment') }}" class="make_an_appointment-btn">qabulga yozilish</a>
+        {% endif %}
+        <!-- --------------------------------------------------------------------- -->
+    </div>
+    <!-- ----------------------- -->
+    <!-- end page options -->
+
+    <!-- ############################################## -->
+    <!-- ############################################## -->
+
+
+    <div class="post_wrapper">
+        <!-- ----------------------- -->
+        <h1 class="post-title">{{ item.name }}</h1>
+        <!-- ----------------------- -->
+
+        <!-- ---------------------------------------------- -->
+        {% if session['lang'] == 'ru' %}
+        <span class="service_price">Цена: {{ item[0].price }} сум</span>
+        {% elif session['lang'] == 'en' %}
+        <span class="service_price">Price: {{ item[0].price }} UZD</span>
+        {% else %}
+        <span class="service_price">Narxi: {{ item[0].price }} som</span>
+        {% endif %}
+        <!-- ---------------------------------------------- -->
+
+        <!-- ---------------------------------------------- -->
+        <!-- ---------------------------------------------- -->
+
+
+        <!-- ---------------------------------------------- -->
+        {{ item[0].description | safe }}
+        <!-- ---------------------------------------------- -->
+    </div>
+
+
+    <!-- ############################################## -->
+    <!-- ############################################## -->
+
+    <div class="doctors_slider-container">
+
+        {% if session['lang'] == 'ru' %}
+        <h1 class="doctors_slider-title">Специалисты этого отделения</h1>
+        {% elif session['lang'] == 'en' %}
+        <h1 class="doctors_slider-title">Specialists in this department</h1>
+        {% else %}
+        <h1 class="doctors_slider-title">Ushbu bo'limda mutaxassislar</h1>
+        {% endif %}
+
+        <div class="doctors_slider">
+
+
+            <div class="doctors_swipper_slider swiper-wrapper">
+
+
+                {% for i in personal %}
+
+                <!-- Doctor Card -->
+                <!-- ----------------------------------- -->
+                <div class="doctor_card swiper-slide">
+                    <!-- Doctor photo -->
+                    <!-- --------------------------------------------------------------------------------- -->
+                    <img src="{{ url_for('main.static', filename='static_files/doctors_photos/'+i.image) }}"
+                        alt="doctor_name" class="doctor_photo">
+                    <!-- --------------------------------------------------------------------------------- -->
+                    <!-- end Doctor photo -->
+
+                    <!-- Doctor info container -->
+                    <!-- -------------------------------------------- -->
+                    <div class="doctor_info_container">
+                        <!-- Doctor post -->
+                        <h1 class="doctor_post">{{ i.position }}</h1>
+                        <!-- Doctor post -->
+
+
+                        <!-- Doctor texts + messengers wrapper -->
+                        <!-- ------------------------------------------- -->
+                        <div class="doctor_texts__messengers_wrapper">
+
+
+                            <!-- Doctor texts wrapper -->
+                            <!-- ------------------------------------------- -->
+                            <div class="doctor_texts_wrapper">
+                                <div class="doctor_text doctor_name">{{ i.surname }} {{ i.name }}</div>
+                                {% if session['lang'] == 'ru' %}
+                                <div class="doctor_text doctor_age">Возраст: {{ i.birth_date }} (в годах)</div>
+                                <div class="doctor_text doctor_experience">Стаж: {{ i.еxperience }} (в годах)
+                                </div>
+                                {% elif session['lang'] == 'en' %}
+                                <div class="doctor_text doctor_age">Age: {{ i.birth_date }} (in years)</div>
+                                <div class="doctor_text doctor_experience">Experience: {{ i.еxperience }} (in
+                                    years)
+                                </div>
+                                {% else %}
+                                <div class="doctor_text doctor_age">Yosh: {{ i.birth_date }} (yillarda)</div>
+                                <div class="doctor_text doctor_experience">Tajriba: {{ i.еxperience }}
+                                    (yillarda)
+                                </div>
+                                {% endif %}
+                            </div>
+                            <!-- ------------------------------------------- -->
+                            <!-- end Doctor texts wrapper -->
+
+
+                            <!-- Messengers icons -->
+                            <!-- -------------------------------------------- -->
+                            <div class="doctor_messengers_wrapper">
+                                <!-- -------------------------------------------- -->
+                                <a href="tel:{{ i.number }}" class="messenger_icon doctor-messenger_icon">
+                                    <svg viewBox="0 0 30 30">
+                                        <path
+                                            d="M15 0C12.0333 0 9.13319 0.879735 6.66645 2.52796C4.19972 4.17618 2.27713 6.51886 1.14181 9.25975C0.00649929 12.0006 -0.290551 15.0166 0.288228 17.9264C0.867006 20.8361 2.29562 23.5088 4.3934 25.6066C6.49119 27.7044 9.16394 29.133 12.0737 29.7118C14.9834 30.2906 17.9994 29.9935 20.7403 28.8582C23.4811 27.7229 25.8238 25.8003 27.472 23.3336C29.1203 20.8668 30 17.9667 30 15C30 11.0218 28.4197 7.20644 25.6066 4.3934C22.7936 1.58035 18.9783 0 15 0V0ZM15.8469 8.0125C19.1875 8.11562 22.075 11.1375 22.0344 14.3781C22.0317 14.4607 22.0369 14.5434 22.05 14.625C22.05 14.8906 22.0344 15.1656 21.6656 15.1562C21.2469 15.1562 21.3063 14.7437 21.2813 14.4281V14.3438C20.8344 10.9062 19.2344 9.27812 15.7469 8.75C15.4563 8.71562 15.0188 8.76562 15.0281 8.39688C15.0688 7.84063 15.5813 8.05625 15.8469 8.0125ZM20.3125 14.2156C20.3133 14.2512 20.3071 14.2865 20.2942 14.3197C20.2812 14.3528 20.2618 14.383 20.2371 14.4086C20.2124 14.4342 20.1829 14.4546 20.1502 14.4687C20.1176 14.4828 20.0824 14.4902 20.0469 14.4906C19.6688 14.5594 19.6094 14.3375 19.5844 14.0875C19.5847 13.9901 19.5764 13.8928 19.5594 13.7969C19.1906 11.7063 18.4375 10.9375 16.2938 10.4625C15.9813 10.3938 15.4875 10.4281 15.575 9.95625C15.6625 9.48438 16.0906 9.64375 16.4313 9.69063C18.5719 9.95625 20.3313 11.7812 20.3219 13.7937C20.3125 13.9156 20.3281 14.0875 20.3125 14.2156ZM18.5313 13.9406C18.4737 13.9721 18.4094 13.9892 18.3438 13.9906C18.2898 13.9969 18.2352 13.9899 18.1845 13.9703C18.1339 13.9507 18.0888 13.9191 18.0531 13.8781C17.9938 13.792 17.9582 13.6918 17.95 13.5875C17.94 13.2029 17.7867 12.836 17.5202 12.5585C17.2537 12.281 16.8932 12.1131 16.5094 12.0875C16.2438 12.0437 15.9781 11.95 16.1063 11.6094C16.1906 11.3688 16.4188 11.3438 16.6375 11.3438C17.575 11.3187 18.7031 12.4406 18.6844 13.4094C18.7038 13.5045 18.6991 13.6029 18.6707 13.6957C18.6423 13.7885 18.5912 13.8727 18.5219 13.9406H18.5313ZM22.0875 19.9719C21.7188 20.9844 20.45 22.0188 19.3625 22.0031C19.1141 21.961 18.8702 21.895 18.6344 21.8062C14.7344 20.1719 11.7188 17.6688 9.66876 14.2406C9.18943 13.4401 8.77157 12.6044 8.41876 11.7406C7.75938 10.1562 8.44376 8.81875 10.1156 8.2625C10.4019 8.16874 10.7106 8.16874 10.9969 8.2625C11.7156 8.52812 13.5156 10.9531 13.55 11.6813C13.575 12.2375 13.2 12.5375 12.8125 12.7875C12.617 12.8913 12.4546 13.048 12.3441 13.2398C12.2336 13.4316 12.1793 13.6507 12.1875 13.8719C12.2064 14.109 12.2678 14.3408 12.3688 14.5563C13.0529 16.0493 14.283 17.2235 15.8063 17.8375C16.3625 18.0875 16.9031 18.0594 17.2875 17.4937C17.9656 16.4906 18.8031 16.5562 19.7219 17.1594C20.1688 17.4719 20.6594 17.7844 21.0844 18.1281C21.6844 18.6125 22.4375 18.9875 22.0781 19.9719H22.0875Z" />
+                                    </svg>
+                                </a>
+                                <!-- -------------------------------------------- -->
+                                <a href="{{ i.instagram }}" class="messenger_icon doctor-messenger_icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2476 2476">
+                                        <path
+                                            d="M825.4 1238c0-227.9 184.7-412.7 412.6-412.7 227.9 0 412.7 184.8 412.7 412.7 0 227.9-184.8 412.7-412.7 412.7-227.9 0-412.6-184.8-412.6-412.7m-223.1 0c0 351.1 284.6 635.7 635.7 635.7s635.7-284.6 635.7-635.7-284.6-635.7-635.7-635.7S602.3 886.9 602.3 1238m1148-660.9c0 82 66.5 148.6 148.6 148.6 82 0 148.6-66.6 148.6-148.6s-66.5-148.5-148.6-148.5-148.6 66.5-148.6 148.5M737.8 2245.7c-120.7-5.5-186.3-25.6-229.9-42.6-57.8-22.5-99-49.3-142.4-92.6-43.3-43.3-70.2-84.5-92.6-142.3-17-43.6-37.1-109.2-42.6-229.9-6-130.5-7.2-169.7-7.2-500.3s1.3-369.7 7.2-500.3c5.5-120.7 25.7-186.2 42.6-229.9 22.5-57.8 49.3-99 92.6-142.4 43.3-43.3 84.5-70.2 142.4-92.6 43.6-17 109.2-37.1 229.9-42.6 130.5-6 169.7-7.2 500.2-7.2 330.6 0 369.7 1.3 500.3 7.2 120.7 5.5 186.2 25.7 229.9 42.6 57.8 22.4 99 49.3 142.4 92.6 43.3 43.3 70.1 84.6 92.6 142.4 17 43.6 37.1 109.2 42.6 229.9 6 130.6 7.2 169.7 7.2 500.3 0 330.5-1.2 369.7-7.2 500.3-5.5 120.7-25.7 186.3-42.6 229.9-22.5 57.8-49.3 99-92.6 142.3-43.3 43.3-84.6 70.1-142.4 92.6-43.6 17-109.2 37.1-229.9 42.6-130.5 6-169.7 7.2-500.3 7.2-330.5 0-369.7-1.2-500.2-7.2M727.6 7.5c-131.8 6-221.8 26.9-300.5 57.5-81.4 31.6-150.4 74-219.3 142.8C139 276.6 96.6 345.6 65 427.1 34.4 505.8 13.5 595.8 7.5 727.6 1.4 859.6 0 901.8 0 1238s1.4 378.4 7.5 510.4c6 131.8 26.9 221.8 57.5 300.5 31.6 81.4 73.9 150.5 142.8 219.3 68.8 68.8 137.8 111.1 219.3 142.8 78.8 30.6 168.7 51.5 300.5 57.5 132.1 6 174.2 7.5 510.4 7.5 336.3 0 378.4-1.4 510.4-7.5 131.8-6 221.8-26.9 300.5-57.5 81.4-31.7 150.4-74 219.3-142.8 68.8-68.8 111.1-137.9 142.8-219.3 30.6-78.7 51.6-168.7 57.5-300.5 6-132.1 7.4-174.2 7.4-510.4s-1.4-378.4-7.4-510.4c-6-131.8-26.9-221.8-57.5-300.5-31.7-81.4-74-150.4-142.8-219.3C2199.4 139 2130.3 96.6 2049 65c-78.8-30.6-168.8-51.6-300.5-57.5-132-6-174.2-7.5-510.4-7.5-336.3 0-378.4 1.4-510.5 7.5" />
+                                    </svg>
+                                </a>
+                                <!-- -------------------------------------------- -->
+                                <a href="{{ i.telegram }}" class="messenger_icon doctor-messenger_icon">
+                                    <svg viewBox="0 0 30 30">
+                                        <path
+                                            d="M15.125 0C12.183 0 9.30708 0.872403 6.8609 2.50689C4.41472 4.14137 2.50815 6.46453 1.3823 9.18258C0.256445 11.9006 -0.0381294 14.8915 0.535826 17.777C1.10978 20.6624 2.52649 23.3129 4.60679 25.3932C6.6871 27.4735 9.33757 28.8902 12.223 29.4642C15.1085 30.0381 18.0994 29.7435 20.8174 28.6177C23.5355 27.4918 25.8586 25.5853 27.4931 23.1391C29.1276 20.6929 30 17.817 30 14.875C30 10.9299 28.4328 7.14639 25.6432 4.35678C22.8536 1.56718 19.0701 0 15.125 0V0ZM24.1655 7.86979L17.2925 25.9221C17.2494 26.0594 17.1738 26.1843 17.0721 26.2862C16.9704 26.388 16.8455 26.4638 16.7082 26.507C16.5709 26.5502 16.4252 26.5596 16.2835 26.5343C16.1418 26.5091 16.0083 26.45 15.8943 26.3621L12.5888 21.7416L11.187 23.0798C11.0937 23.2012 10.9736 23.2993 10.8361 23.3666C10.6986 23.4339 10.5474 23.4685 10.3943 23.4677L10.6811 19.4708L10.855 19.3179L10.8497 19.3106L20.1966 10.2925C20.4497 10.0648 20.1966 9.81184 19.9184 10.0142L9.26861 18.5138L4.70039 15.1682C4.61245 15.0542 4.55335 14.9207 4.52812 14.779C4.50289 14.6373 4.51227 14.4916 4.55547 14.3542C4.59868 14.2169 4.67442 14.0921 4.77625 13.9904C4.87808 13.8886 5.00298 13.813 5.14033 13.7699L23.2 6.9043C23.3351 6.83972 23.4869 6.81862 23.6346 6.84392C23.7822 6.86923 23.9183 6.93968 24.0242 7.04558C24.1301 7.15148 24.2005 7.28762 24.2258 7.43523C24.2511 7.58284 24.23 7.73467 24.1655 7.86979V7.86979Z" />
+                                    </svg>
+                                </a>
+                                <!-- -------------------------------------------- -->
+                            </div>
+                            <!-- -------------------------------------------- -->
+                            <!-- end Messengers icon -->
+                        </div>
+                        <!-- ------------------------------------------- -->
+                        <!-- end Doctor texts + messengers wrapper -->
+
+
+
+                        <!-- Make an appointment -->
+                        <!-- -------------------------------------------- -->
+                        <div class="btn-make_an_appointment_wrapper">
+
+                            {% if session['lang'] == 'ru' %}
+                            <a href="{{ url_for('main.make_an_appointment') }}"
+                                class="btn-make_an_appointment btn-doctor-make_an_appointment">записаться на
+                                приём</a>
+                            {% elif session['lang'] == 'en' %}
+                            <a href="{{ url_for('main.make_an_appointment') }}"
+                                class="btn-make_an_appointment btn-doctor-make_an_appointment">make an
+                                appointment</a>
+                            {% else %}
+                            <a href="{{ url_for('main.make_an_appointment') }}"
+                                class="btn-make_an_appointment btn-doctor-make_an_appointment">qabulga yozilish</a>
+                            {% endif %}
+                            <span class="btn-make_an_appointment_background"></span>
+                        </div>
+                        <!-- -------------------------------------------- -->
+                        <!-- end Make an appointment -->
+                    </div>
+                    <!-- -------------------------------------------- -->
+                    <!-- end Doctor info container -->
+                </div>
+                <!-- ----------------------------------- -->
+                <!-- end Doctor Card -->
+
+                {% endfor %}
+
+            </div>
+
+            <!-- Pagination dots -->
+            <div class="cards_swiper_pagination doctors_cards_swiper_pagination"></div>
+            <!-- end Pagination dots -->
+        </div>
+
+    </div>
+
+    <!-- ############################################## -->
+    <!-- ############################################## -->
+
+</main>
+{% endblock content %}

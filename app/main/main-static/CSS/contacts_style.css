@@ -1,0 +1,465 @@
+/* contacts section */
+/* ==================================== */
+section.contacts_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ------------------------------------ */
+
+.contacts {
+    position: relative;
+    width: 100%;
+}
+
+/* contacts wrapper */
+/* ------------------------------------ */
+.contacts-wrapper {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    /* ----------*/
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* ------------------------- */
+    position: relative;
+}
+
+/* ------------------------------------ */
+/* end contacts wrapper */
+
+
+.contacts-blocks {
+    margin: 10px;
+}
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+
+
+/* contacts form container */
+/* ------------------------------------ */
+.contacts-form-container {
+    margin-right: 100px;
+}
+
+/* ------------------------------------ */
+/* end contacts form container */
+
+
+/* --------------------------------------- */
+/* --------------------------------------- */
+
+
+
+/* ------------------------------------ */
+h1.contacts-form-text {
+    padding-left: 10px;
+    font-size: 30px;
+    line-height: 120%;
+    font-family: 'Montserrat';
+    color: #566E8C;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------ */
+
+
+/* contacts form -> form */
+/* ------------------------------------ */
+form.contacts-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    /* ------------------- */
+    max-width: 590px;
+}
+
+/* ------------------------------------ */
+/* end contacts form -> form */
+
+
+/* contacts form -> input */
+/* ------------------------------------ */
+.contacts-input_wrapper {
+    display: flex;
+}
+
+input.contacts-form-input {
+    max-width: 310px;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    margin: 5px;
+}
+
+/* ------------------------------------ */
+textarea.contacts-form-textarea {
+    padding: 20px;
+    max-height: 200px;
+    max-width: 660px;
+    width: 100%;
+    margin: 5px;
+}
+
+/* ------------------------------------ */
+/* end contacts form -> input */
+
+
+
+/* contacts form -> selects wrapper */
+/* ------------------------------------ */
+.contacts-form-selects_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+/* --------------------------------------- */
+
+
+input.contacts-form-submit {}
+
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+
+
+
+/* contacts contacts container */
+/* ------------------------------------ */
+.contacts-contacts-container {
+    max-width: 760px;
+    width: 100%;
+    /* ------------- */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* ------------------------------------ */
+
+
+/* contacts map */
+/* ------------------------------------ */
+iframe.contacts-map {
+    max-width: 760px;
+    max-height: 330px;
+    width: 100%;
+    height: 430px;
+    /* ------------- */
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------ */
+/* end contacts map */
+
+
+
+/* contacts contacts wrapper */
+/* ------------------------------------ */
+.contacts-contacts_wrapper {
+    width: 100%;
+}
+
+/* ------------------------------------ */
+/* end contacts contacts wrapper */
+
+
+/* contacts contacts wrapper */
+/* ------------------------------------ */
+.contacts-contact_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    /* ----------------- */
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 20px;
+    /* ---------- */
+    margin: 10px 0;
+    color: #566E8C;
+}
+
+/* ------------------------------------ */
+/* end contacts contacts wrapper */
+
+
+/* ------------------------------------ */
+.contacts-contact_wrapper svg {
+    fill: #566E8C;
+    margin-right: 18px;
+}
+
+/* ------------------------------------ */
+
+
+
+/* ------------------------------ */
+.address_wrapper svg {
+    width: 22px;
+}
+
+/* ------------------------------ */
+.telephone_wrapper svg {
+    width: 21px;
+}
+
+/* ------------------------------- */
+.mail_wrapper {
+    margin-top: -3px;
+}
+
+.mail_wrapper svg {
+    width: 26px;
+}
+
+/* ------------------------------- */
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+
+/* Messengers */
+/* ------------------------------------ */
+.contacts-messenger-wrapper {}
+
+/* ------------------------------------ */
+/* end Messengers */
+
+/* ------------------------------------ */
+.contacts-messenger svg {
+    height: 38px;
+    margin-right: 10px;
+    transition: 0.2s;
+    fill: #566E8C;
+}
+
+.contacts-youtube svg {
+    height: 37px;
+}
+
+.contacts-instagram svg {
+    height: 37px;
+}
+
+.contacts-messenger svg:hover {
+    fill: #6683a7;
+}
+
+/* ------------------------------------ */
+
+
+
+a.contacts-sign_up-btn-in_contacts {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    /* ------------------- */
+    font-family: 'Montserrat';
+    font-size: 32px;
+    /* ---------- */
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0 0 0;
+    border-radius: 8px;
+    /* -------------- */
+    color: #fffffff1;
+    background: #617da0ce;
+    /* -------------- */
+    white-space: nowrap;
+    transition-duration: 0.3s;
+    transition-property: background;
+    transform: translateY(0);
+}
+
+a.contacts-sign_up-btn-in_contacts:hover {
+    background: #617da0;
+}
+
+/* ========================================================= */
+/* end contacts section */
+
+
+
+
+@media (max-width: 1920px) {
+
+    /* contacts form container */
+    /* ------------------------------------ */
+    .contacts-form-container {
+        margin-right: calc(0px + (100 - 0) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    /* end contacts form container */
+
+
+    /* ------------------------------------ */
+    h1.contacts-form-text {
+        font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    form.contacts-form {
+        max-width: calc(290px + (590 - 290) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* contacts form -> form */
+    /* ------------------------------------ */
+    input.contacts-form-input {
+        max-width: calc(290px + (310 - 290) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(40px + (60 - 40) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    textarea.contacts-form-textarea {
+        padding: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        max-width: calc(290px + (660 - 290) * ((100vw - 320px) / (1920 - 320)));
+        max-height: calc(120px + (200 - 120) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    input.contacts-form-submit {}
+
+    /* ------------------------------------ */
+    /* end contacts form -> form */
+
+
+
+    /* contacts contacts container */
+    /* ------------------------------------ */
+    .contacts-contacts-container {
+        max-width: calc(290px + (760 - 290) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+
+    /* contacts map */
+    /* ------------------------------------ */
+    iframe.contacts-map {
+        max-width: calc(290px + (760 - 290) * ((100vw - 320px) / (1920 - 320)));
+        max-height: calc(240px + (330 - 240) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    /* end contacts map */
+
+
+    /* contacts contacts wrapper */
+    /* ------------------------------------ */
+    .contacts-contact_wrapper {
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    /* end contacts contacts wrapper */
+
+
+    .contacts-messenger svg {
+        height: calc(25px + (38 - 25) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .contacts-instagram svg {
+        height: calc(25px + (37 - 25) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .contacts-youtube svg {
+        height: calc(25px + (37 - 25) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+
+
+    /* ------------------------------------ */
+    a.footer-sign_up-btn-in_contacts {
+        font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))) 0 0 0;
+    }
+
+    /* ------------------------------------ */
+
+
+}
+
+
+@media (max-width: 1280px) {
+    /* .useful-others-btn_icon {width: calc( 50px + (70 - 50) * ((100vw - 320px) / (1280 - 320)));} */
+
+    /* Footer form container */
+    /* ------------------------------------ */
+    .footer-form-container {
+        display: none;
+    }
+
+    /* ------------------------------------ */
+    /* end Footer form container */
+
+    /* ------------------------------------------- */
+    a.footer-sign_up-btn-in_contacts {
+        display: flex;
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1120px) {
+
+    /* contacts form container */
+    /* ------------------------------------ */
+    .contacts-form-container {
+        margin: 0;
+    }
+
+    /* ------------------------------------ */
+    /* end contacts form container */
+
+
+
+    .contacts-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+
+    .contacts-form-container {
+        margin-bottom: 60px;
+    }
+
+
+}
+
+@media (max-width: 579px) {
+    .contacts-input_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: none;
+        width: 100%;
+    }
+
+    p.hme_initials-text {
+        display: none;
+    }
+
+}

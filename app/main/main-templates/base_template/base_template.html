@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- -------------------------------------- -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- -------------------------------------- -->
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="description" content="{{ description }}">
+    <!-- -------------------------------------- -->
+    <meta name="robots" content="">
+    <!-- -------------------------------------- -->
+    <meta name="Author" content="">
+    <meta name="Copyright" content="">
+    <meta name="Address" content="">
+    <!-- -------------------------------------- -->
+    <meta property="og:locale" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="SALUS">
+    <!-- -------------------------------------- -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="SALUS">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <!-- -------------------------------------- -->
+
+    <!-- CSS Links -->
+    <!-- ========================================== -->
+    <!-- Swap slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- ========================================== -->
+    <!-- CSS Links -->
+
+
+
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/fonts.css') }}">
+    <!-- ------------------------------------------ -->
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/css-settings.css') }}">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/header_style.css') }}">
+    <!-- ------------------------------------------ -->
+    {% block head %}{% endblock head %}
+    <!-- ------------------------------------------ -->
+
+    <!-- Favicon Links -->
+    <!-- ========================================== -->
+    <link rel="shortcut icon"
+        href="{{ url_for('main.static', filename='static_files/svg_logotype/ico_title-logotype.ico') }}"
+        type="image/x-icon">
+    <!-- ========================================== -->
+    <!-- end Favicon Links -->
+
+    <title>{{ page_title }}</title>
+</head>
+
+
+<!-- ############################################## -->
+<!-- ############################################## -->
+
+
+<body>
+    <!-- ################### body wrapper ###################### -->
+    <div class="body_wrapper">
+
+
+        <!-- ################### Header window ###################### -->
+        <div class="glass_window hader_window">
+
+            <!-- ################### Header ###################### -->
+            <header class="header">
+
+
+                <!-- Logotype -->
+                <!-- =============================== -->
+                <a href="{{ url_for('main.main_page') }}" class="logotype_container">
+                    <img class="header-svg_logotype"
+                        src="{{ url_for('main.static', filename='static_files/svg_logotype/svg_header-logotype.svg') }}"
+                        alt="">
+                    <div class="header-text_logotype text_logotype">SALUS</div>
+                </a>
+                <!-- =============================== -->
+                <!-- end Logotype -->
+
+
+                <!-- Wrapper nav nav bar and buttons in header -->
+                <!-- ========================================= -->
+
+                <div class="wrapper-nav_bar__buttons_wrapper">
+                    <!-- Nav Bar -->
+                    <!-- ========================================= -->
+                    {% block navbar %}{% endblock navbar %}
+                    <!-- ========================================= -->
+                    <!-- end Nav Bar -->
+
+
+
+                    <!-- Header Buttons Wrapper -->
+                    <!-- ======================== -->
+                    <div class="header-btns_wrapper">
+                        <!-- Language -->
+                        <!-- ==================================================== -->
+                        {% if session['lang'] == 'ru' %}
+                        <div class="header-lang_wrapper header-lang_wrapper_left">
+                            <!-- Active language -->
+                            <a href="#" class="header-lang_menu header-lang_item">
+                                <img class="header-lang__svg active_lang"
+                                    src="{{ url_for('main.static', filename='static_files/svg_lang/RU.svg') }}"
+                                    alt="RU">
+                            </a>
+                            <!-- end Active language -->
+
+
+                            <!-- Language list -->
+                            <!-- ----------------------- -->
+                            <div class="glass_window header-langs__list">
+                                <a href="{{ url_for('main.lang', lang_code='en', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg "
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/EN.svg') }}"
+                                        alt="EN">
+                                </a>
+                                <!-- -------------------------------------------------------- -->
+                                <a href="{{ url_for('main.lang', lang_code='uz', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/UZ.svg') }}"
+                                        alt="UZ">
+                                </a>
+                            </div>
+                            <!-- ----------------------- -->
+                            <!-- end Language list -->
+                        </div>
+                        {% elif session['lang'] == 'en' %}
+                        <div class="header-lang_wrapper header-lang_wrapper_left">
+                            <!-- Active language -->
+                            <a href="#" class="header-lang_menu header-lang_item">
+                                <img class="header-lang__svg active_lang"
+                                    src="{{ url_for('main.static', filename='static_files/svg_lang/EN.svg') }}"
+                                    alt="EN">
+                            </a>
+                            <!-- end Active language -->
+
+
+                            <!-- Language list -->
+                            <!-- ----------------------- -->
+                            <div class="glass_window header-langs__list">
+                                <a href="{{ url_for('main.lang', lang_code='ru', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg "
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/RU.svg') }}"
+                                        alt="RU">
+                                </a>
+                                <!-- -------------------------------------------------------- -->
+                                <a href="{{ url_for('main.lang', lang_code='uz', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/UZ.svg') }}"
+                                        alt="UZ">
+                                </a>
+                            </div>
+                            <!-- ----------------------- -->
+                            <!-- end Language list -->
+                        </div>
+                        {% else %}
+                        <div class="header-lang_wrapper header-lang_wrapper_left">
+                            <!-- Active language -->
+                            <a href="#" class="header-lang_menu header-lang_item">
+                                <img class="header-lang__svg active_lang"
+                                    src="{{ url_for('main.static', filename='static_files/svg_lang/UZ.svg') }}"
+                                    alt="UZ">
+                            </a>
+                            <!-- end Active language -->
+
+
+                            <!-- Language list -->
+                            <!-- ----------------------- -->
+                            <div class="glass_window header-langs__list">
+                                <a href="{{ url_for('main.lang', lang_code='en', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg "
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/EN.svg') }}"
+                                        alt="EN">
+                                </a>
+                                <!-- -------------------------------------------------------- -->
+                                <a href="{{ url_for('main.lang', lang_code='ru', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/RU.svg') }}"
+                                        alt="RU">
+                                </a>
+                            </div>
+                            <!-- ----------------------- -->
+                            <!-- end Language list -->
+                        </div>
+                        {% endif %}
+                        <!-- ==================================================== -->
+                        <!-- end Language -->
+
+
+                        <!-- Enter buttons -->
+                        <!-- ================================= -->
+                        {% if session['lang'] == 'ru' %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="" class="header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+                            <a href="{{ url_for('main.login') }}" class="header-enter header-sign_in-btn">ВОЙТИ</a>
+                        </div>
+                        {% elif session['lang'] == 'en' %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="" class="header-enter header-sign_up-btn">REGISTRATION</a>
+                            <a href="{{ url_for('main.login') }}" class="header-enter header-sign_in-btn">SIGN IN</a>
+                        </div>
+                        {% else %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="" class="header-enter header-sign_up-btn">RO'YXATDAN O'TISH</a>
+                            <a href="{{ url_for('main.login') }}" class="header-enter header-sign_in-btn">KIRISH</a>
+                        </div>
+                        {% endif %}
+                        <!-- ================================= -->
+                        <!-- end Enter buttons -->
+
+
+                        <!-- Language -->
+                        <!-- ==================================================== -->
+                        {% if session['lang'] == 'uz' %}
+                        <div class="header-lang_wrapper header-lang_wrapper_right">
+                            <!-- Active language -->
+                            <a href="#" class="header-lang_menu header-lang_item">
+                                <img class="header-lang__svg active_lang"
+                                    src="{{ url_for('main.static', filename='static_files/svg_lang/UZ.svg') }}"
+                                    alt="UZ">
+                            </a>
+                            <!-- end Active language -->
+
+
+                            <!-- Language list -->
+                            <!-- ----------------------- -->
+                            <div class="header-langs__list">
+                                <a href="{{ url_for('main.lang', lang_code='en', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/EN.svg') }}"
+                                        alt="EN">
+                                </a>
+                                <!-- ------------------------------------------ -->
+                                <a href="{{ url_for('main.lang', lang_code='ru', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/RU.svg') }}"
+                                        alt="RU">
+                                </a>
+                            </div>
+                            <!-- ----------------------- -->
+                            <!-- end Language list -->
+                        </div>
+                        {% elif session['lang'] == 'en' %}
+                        <div class="header-lang_wrapper header-lang_wrapper_right">
+                            <!-- Active language -->
+                            <a href="#" class="header-lang_menu header-lang_item">
+                                <img class="header-lang__svg active_lang"
+                                    src="{{ url_for('main.static', filename='static_files/svg_lang/EN.svg') }}"
+                                    alt="EN">
+                            </a>
+                            <!-- end Active language -->
+
+
+                            <!-- Language list -->
+                            <!-- ----------------------- -->
+                            <div class="header-langs__list">
+                                <a href="{{ url_for('main.lang', lang_code='ru', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/RU.svg') }}"
+                                        alt="RU">
+                                </a>
+                                <!-- ------------------------------------------ -->
+                                <a href="{{ url_for('main.lang', lang_code='uz', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/UZ.svg') }}"
+                                        alt="UZ">
+                                </a>
+                            </div>
+                            <!-- ----------------------- -->
+                            <!-- end Language list -->
+                        </div>
+                        {% else %}
+                        <div class="header-lang_wrapper header-lang_wrapper_right">
+                            <!-- Active language -->
+                            <a href="#" class="header-lang_menu header-lang_item">
+                                <img class="header-lang__svg active_lang"
+                                    src="{{ url_for('main.static', filename='static_files/svg_lang/RU.svg') }}"
+                                    alt="RU">
+                            </a>
+                            <!-- end Active language -->
+
+
+                            <!-- Language list -->
+                            <!-- ----------------------- -->
+                            <div class="header-langs__list">
+                                <a href="{{ url_for('main.lang', lang_code='en', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/EN.svg') }}"
+                                        alt="EN">
+                                </a>
+                                <!-- ------------------------------------------ -->
+                                <a href="{{ url_for('main.lang', lang_code='uz', site_path=request.endpoint) }}"
+                                    class="header-lang_item header-langs__list-lang_item">
+                                    <img class="header-lang__svg"
+                                        src="{{ url_for('main.static', filename='static_files/svg_lang/UZ.svg') }}"
+                                        alt="UZ">
+                                </a>
+                            </div>
+                            <!-- ----------------------- -->
+                            <!-- end Language list -->
+                        </div>
+                        {% endif %}
+                        <!-- ==================================================== -->
+                        <!-- end Language -->
+
+
+                        <!-- burger button -->
+                        <!-- ======================================= -->
+                        <div class="header-burger_button__wrapper">
+                            <!-- Burger button -->
+                            <!-- ----------------------------------- -->
+                            <a href="" class="burger_button">
+                                <span class="burger_button-line"></span>
+                            </a>
+                            <!-- ----------------------------------- -->
+                            <!-- end Burger button -->
+
+
+
+                            <!-- Nav Bar -->
+                            <!-- -------------------------- -->
+                            <nav class="burger_button-nav_bar">
+                                {% block burger_navbar %}{% endblock burger_navbar %}
+                            </nav>
+                            <!-- -------------------------- -->
+                            <!-- end Nav Bar -->
+                        </div>
+                        <!-- ======================================= -->
+                        <!-- end burger button -->
+                    </div>
+                    <!-- ====================== -->
+                    <!-- end Header Buttons Wrapper -->
+                </div>
+                <!-- ============================================= -->
+                <!-- end Wrapper nav nav bar and buttons in header -->
+
+
+            </header>
+            <!-- ############### End Header ##################### -->
+
+
+            <!-- ################## Main page -> content slider ###################### -->
+            {% block main_page_content %}{% endblock main_page_content %}
+            <!-- ############### end Main page -> content slider ##################### -->
+        </div>
+        <!-- ############### end Header window ##################### -->
+
+
+        <!-- ################# Content window ####################### -->
+        <div class="glass_window content_window">
+            <!-- -------------------------------- -->
+            {% for validate_class, message in get_flashed_messages(True) %}
+            <div class="message-body {{ validate_class }}">
+                <p class="message">
+                    {{ message }}
+                </p>
+            </div>
+            {% endfor %}
+            <!-- -------------------------------- -->
+            {% if form %}
+            {% for field_name in form.errors %}
+            {% for error in form.errors[field_name] %}
+            <div class="message-body invalide-message">
+                <p class="message">{{ error }}</p>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% endif %}
+            <!-- -------------------------------- -->
+            {% block content %}{% endblock content %}
+        </div>
+
+        <!-- ############### end Content window ##################### -->
+
+
+    </div>
+    <!-- ################### end body wrapper ###################### -->
+
+
+
+
+    <!-- ##################### JavaScripts ######################## -->
+    <!-- JS JQuery -->
+    <script src="{{ url_for('main.static', filename='JS/jquery-3.6.3.min.js') }}"></script>
+    <!-- ----------------------------------- -->
+    <!-- Swap slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- ----------------------------------- -->
+    <!-- my scripts -->
+    <script src="{{ url_for('main.static', filename='JS/scripts.js') }}"></script>
+    <!-- ----------------------------------- -->
+    {{ moment.include_moment() }}
+    {% block javaScript %}{% endblock javaScript %}
+
+    <!-- ----------------------------------- -->
+    <!-- ################# end JavaScripts ######################## -->
+
+
+</body>
+
+</html>

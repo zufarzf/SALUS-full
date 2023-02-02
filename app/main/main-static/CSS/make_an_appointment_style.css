@@ -1,0 +1,284 @@
+/* make_an_appointment blocks container */
+main {
+    padding-top: 80px;
+}
+
+@media (max-width:1920px) {
+    main {
+        padding-top: calc(20px + (80 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
+}
+
+.make_an_appointment-blocks_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+    height: 100%;
+}
+
+/* end make_an_appointment blocks container */
+
+
+
+
+/* Form container */
+/* -------------------------- */
+.make_an_appointment-form_container {
+    margin: 0 auto;
+    max-width: 590px;
+    width: 100%;
+}
+
+/* -------------------------- */
+/* end Form container */
+
+
+/* Form text */
+/* -------------------------- */
+p.page_title {
+    color: #566E8C;
+    font-family: 'Montserrat';
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+/* -------------------------- */
+/* end Form text */
+
+
+/* Form */
+/* -------------------------- */
+form.make_an_appointment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* -------------------------- */
+/* end Form */
+
+
+
+/* make_an_appointment form -> input */
+/* ------------------------------------ */
+input.make_an_appointment-form-input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------ */
+/* end make_an_appointment form -> input */
+
+
+
+
+
+/* ---------------------------------- */
+input.make_an_appointment-form-submit {}
+
+/* ---------------------------------- */
+
+
+/* ============================================ */
+/* end Block - make_an_appointment form wrapper */
+
+
+
+
+
+
+
+/* make_an_appointment form -> selects wrapper */
+/* ------------------------------------ */
+.make_an_appointment-form-selects_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+/* ------------------------------------ */
+.make_an_appointment-form-selects_wrapper select {
+    appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* ------------------- */
+    cursor: pointer;
+    box-shadow: none;
+    border: 0 !important;
+    background: #e8e8e800;
+    /* ---------------------- */
+    font-size: 22px;
+    font-family: 'Montserrat';
+    /* -------------------- */
+    flex: 1;
+    color: #566e8c;
+    /* ------------------- */
+    width: 90%;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.make_an_appointment-form-selects_wrapper select::-ms-expand {
+    display: none;
+}
+
+/* ---------------------------------------------------------- */
+
+
+/* ------------------------------------ */
+.select_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    /* ------------- */
+    border-radius: 9px;
+    background: #e8e8e88c;
+    /* ---------------------- */
+    width: 50%;
+    height: 60px;
+    margin-left: 15px;
+}
+
+.select_wrapper:first-child {
+    margin-left: 0;
+}
+
+/* --------------------------------------- */
+
+
+/* --------------------------------------- */
+.select_wrapper::after {
+    content: '\25bc';
+    color: #566e8ce6;
+    position: absolute;
+    right: 15px;
+}
+
+/* ------------------------------------ */
+.make_an_appointment-form-selects_wrapper select option {
+    background: #e8e8e841;
+    color: #566e8c;
+}
+
+/* ------------------------------------ */
+/* end make_an_appointment form -> selects wrapper */
+
+
+/* ------------------------------------ */
+p.make_an_appointment-form-reception_schedule {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    border-radius: 9px;
+    /* ------------- */
+    display: flex;
+    align-items: center;
+    /* --------------- */
+    font-size: 24px;
+    color: #566E8C;
+    font-family: 'Montserrat';
+    /* --------------- */
+    background: #e8e8e88c;
+}
+
+/* ------------------------------------ */
+
+
+/* ------------------------------------ */
+/* .make_an_appointment-form-datetime_wrapper {} */
+/* ------------------------------------ */
+p.make_an_appointment-form-datetime_text {
+    margin: 15px 10px;
+    font-size: 24px;
+    color: #566E8C;
+}
+
+/* ------------------------------------ */
+
+
+
+
+
+
+@media (max-width:1920px) {
+
+    /* Block - make_an_appointment form wrapper */
+    /* ========================== */
+    .make_an_appointment-form_container {
+        max-width: calc(290px + (590 - 290) * ((100vw - 320px) / (1920 - 320)));
+        margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* Form text */
+    /* -------------------------- */
+    p.page_title {
+        /* margin-bottom: 15px; */
+        font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* -------------------------- */
+    /* end Form text */
+
+
+    /* make_an_appointment form -> input */
+    /* ------------------------------------ */
+    input.make_an_appointment-form-input {
+        height: calc(40px + (60 - 40) * ((100vw - 320px) / (1920 - 320)));
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+        /* margin-bottom: 15px; */
+    }
+
+    /* ------------------------------------ */
+    /* end make_an_appointment form -> input */
+
+
+    /* ---------------------------------- */
+    input.make_an_appointment-form-submit {
+        font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+    .make_an_appointment-form-selects_wrapper select {
+        font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(40px + (60 - 40) * ((100vw - 320px) / (1920 - 320)));
+        /* margin-right: 15px; */
+    }
+
+    /* ---------------------------------- */
+
+
+    .select_wrapper {
+        /* margin-left: 15px; */
+        height: calc(40px + (60 - 40) * ((100vw - 320px) / (1920 - 320)));
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+
+    /* ------------------------------------ */
+    p.make_an_appointment-form-reception_schedule {
+        height: calc(40px + (60 - 40) * ((100vw - 320px) / (1920 - 320)));
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+
+    p.make_an_appointment-form-datetime_text {
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ------------------------------------ */
+
+}

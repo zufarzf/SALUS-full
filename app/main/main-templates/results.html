@@ -1,0 +1,249 @@
+{% extends 'base_template/base_template.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/results_style.css') }}">
+{% endblock head %}
+
+
+
+
+{% block navbar %}
+{% if session['lang'] == 'ru' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item active_page">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Контакты</a>
+</nav>
+{% elif session['lang'] == 'en' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item active_page">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Contacts</a>
+</nav>
+{% else %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Bosh sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item active_page">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Ro'yxatdan o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">Biz haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Aloqa</a>
+</nav>
+{% endif %}
+{% endblock navbar %}
+
+
+
+
+
+{% block burger_navbar %}
+<div class="burger_button-nav_bar-item__wrapper">
+    {% if session['lang'] == 'ru' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Контакты</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% elif session['lang'] == 'en' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Contacts</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% else %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Bosh
+        sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Ro'yxatdan
+        o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">Biz
+        haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Aloqa</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN
+            O'TISH</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% endif %}
+</div>
+{% endblock burger_navbar %}
+
+
+
+
+
+{% block content %}
+
+<main class="results-main">
+
+
+    <!-- results blocks container -->
+    <!-- ----------------------------------- -->
+    <div class="results-blocks_container">
+
+        <!-- Block -->
+        <!-- ======================================== -->
+        <div class="results-block results-form_wrapper">
+
+            <!-- Page name -->
+            <!-- ----------------------------------- -->
+            <h1 class="page_title">{{ page_title }}</h1>
+            <!-- ----------------------------------- -->
+            <!-- end Page name -->
+            <!-- Form container -->
+            <!-- ----------------------------------- -->
+            <div class="results-form_container">
+
+                {% if session['lang'] == 'ru' %}
+                <h1 class="results-form_text">
+                    Здесь вы можете узнать результаты анализов.
+                    Вам всеголишь нужно ввести свои данные ниже
+                </h1>
+                {% elif session['lang'] == 'en' %}
+                <h1 class="results-form_text">
+                    Here you can find the test results.
+                    You just need to enter your details below
+                </h1>
+                {% else %}
+                <h1 class="results-form_text">
+                    Bu yerda siz test natijalari bilan tanishishingiz mumkin.
+                    Siz shunchaki quyida ma'lumotlarni kiritishingiz kerak
+                </h1>
+                {% endif %}
+
+                <!-- Form -->
+                <!-- ----------------------------------- -->
+                <form action="" class="results-form">
+                    <!-- ----------------------------------- -->
+                    <input placeholder="ID или Login" type="text" class="input_style results-input">
+                    <!-- ----------------------------------- -->
+                    <input placeholder="Пароль" type="password" name="" id="" class="input_style results-input">
+                    <!-- ----------------------------------- -->
+                    <input type="submit" value="УЗНАТЬ РЕЗУЛЬТАТЫ" class="input_submit results-submit">
+                    <!-- ----------------------------------- -->
+                </form>
+                <!-- ----------------------------------- -->
+                <!-- end Form -->
+
+
+            </div>
+            <!-- ----------------------------------- -->
+            <!-- end Form container -->
+
+        </div>
+        <!-- ======================================== -->
+        <!-- end Block -->
+
+    </div>
+    <!-- ----------------------------------- -->
+    <!-- end results blocks container -->
+
+
+</main>
+
+
+<div class="on_development-wrapper">
+    {% if session['lang'] == 'ru' %}
+    <h1 class="on_development">Этот раздел <br> пока на разработке</h1>
+    {% elif session['lang'] == 'en' %}
+    <h1 class="on_development">This section <br> is still under development</h1>
+    {% else %}
+    <h1 class="on_development">Ushbu bo'lim <br> hali ishlab chiqilmoqda </h1>
+    {% endif %}
+</div>
+
+<style>
+    .on_development-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(142.89deg, #ecececc9 0.85%,
+                #ffffff75 104.42%);
+        backdrop-filter: blur(12px);
+        /* ----------------------- */
+        border-radius: 9px;
+        ;
+    }
+
+    h1.on_development {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 140%;
+        color: #566E8C;
+    }
+
+    @media (max-width: 1920px) {
+        h1.on_development {
+            font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+</style>
+
+{% endblock content %}

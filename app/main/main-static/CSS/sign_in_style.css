@@ -1,0 +1,166 @@
+a.header-sign_in-btn {
+    display: none;
+}
+
+.content_window {
+    height: 100%;
+    max-height: 1440px;
+    margin-top: 20px;
+}
+
+
+/* main.sign_in-main {} */
+/* ################################ */
+
+
+/* sign_in blocks container */
+.sign_in-blocks_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 50px;
+}
+
+/* end sign_in blocks container */
+
+
+
+/* Block */
+/* ========================== */
+.sign_in-block {
+    margin: 20px;
+    max-width: 550px;
+    width: 100%;
+}
+
+/* ========================== */
+/* End Block */
+
+
+
+
+
+/* Block - sign_in form wrapper */
+/* ========================== */
+.sign_in-form_wrapper {}
+
+
+
+
+/* Form container */
+/* -------------------------- */
+.sign_in-form_container {}
+
+
+/* Form */
+/* -------------------------- */
+form.sign_in-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------- */
+/* end Form */
+
+
+/* Form text */
+/* -------------------------- */
+h1.sign_in-form_text {
+    font-family: 'Montserrat';
+    font-size: 32px;
+    line-height: 41px;
+    color: #566E8C;
+}
+
+/* -------------------------- */
+/* end Form text */
+
+
+/* -------------------------- */
+input.sign_in-input {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* -------------------------- */
+label.sign_in-label-checkbox {
+    font-family: 'Montserrat';
+    font-size: 24px;
+    color: #566E8C;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    user-select: none;
+    margin: 15px 0 0 7px;
+}
+
+input.sign_in-checkbox {
+    display: none;
+}
+
+label.sign_in-label-checkbox::before {
+    content: '';
+    text-align: center;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #ebebebf1;
+
+    backdrop-filter: blur(49px);
+    border-radius: 3px;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+
+
+/* -------------------------- */
+input.sign_in-submit {}
+
+/* -------------------------- */
+
+/* -------------------------- */
+/* end Form container */
+
+/* ========================== */
+/* end Block - sign_in form wrapper */
+
+
+@media (max-width:1920px) {
+
+    /* sign_in blocks container */
+    .sign_in-blocks_container {
+        padding: calc(10px + (50 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* end sign_in blocks container */
+
+
+    /* Block */
+    /* ========================== */
+    .sign_in-block {
+        margin: calc(0px + (20 - 0) * ((100vw - 320px) / (1920 - 320)));
+        max-width: calc(280px + (550 - 280) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ========================== */
+    /* End Block */
+
+    input.sign_in-submit {
+        font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    input.sign_in-input {
+        height: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320)));
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* -------------------------- */
+    label.sign_in-label-checkbox {
+        font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
+}

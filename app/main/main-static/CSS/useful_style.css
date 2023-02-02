@@ -1,0 +1,207 @@
+.useful_wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* --------------------------------- */
+
+.useful_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+
+/* ===================================== */
+/* ===================================== */
+
+
+/* Usefuls card */
+/* --------------------------------- */
+a.useful_card {
+    position: relative;
+    overflow: hidden;
+    /* ------------- */
+    display: block;
+    background: #bbbbbbde;
+    /* ------------- */
+    border-radius: 9px;
+    margin: 10px;
+    width: 320px;
+    height: 240px;
+}
+
+/* end Usefuls card */
+
+/* Useful photo */
+/* ---------------------- */
+img.useful_photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 145%;
+    opacity: 0.95;
+}
+
+/* ---------------------- */
+/* end Useful photo */
+
+
+
+
+
+
+/* Useful description wrapper */
+/* --------------------------------- */
+.useful-description_wrapper {
+    position: absolute;
+    bottom: 0;
+    /* ----------------------- */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* ----------------------- */
+    background: linear-gradient(99.06deg, #566e8cde 57.31%, #566e8cb1 98.77%);
+    backdrop-filter: blur(9.5px);
+    /* ----------------------- */
+    border-radius: 9px;
+    width: 100%;
+    height: 85px;
+    padding: 20px;
+    transition: height 0.7s;
+}
+
+a.useful_card:hover .useful-description_wrapper {
+    height: 100%;
+}
+
+/* --------------------------------- */
+
+
+
+
+
+
+
+/* Post name */
+/* ----------------- */
+h1.useful-post_name {
+    font-weight: 600;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+/* ----------------- */
+/* end Post name */
+
+
+
+
+/* Useful -> post date */
+/* --------------------------------- */
+.useful-post_date_wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* ------------ */
+    font-size: 15px;
+    color: #FFFFFF;
+    /* ------------ */
+    margin: 10px 0;
+}
+
+/* --------------------------------- */
+.useful-post_date_icon {
+    margin-right: 5px;
+}
+
+/* --------------------------------- */
+/* end Useful -> post date */
+
+
+
+/* --------------------------------- */
+.useful-description-text_wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+a.useful_card:hover .useful-description-text_wrapper {
+    opacity: 1;
+}
+
+
+.useful-description-text_wrapper-wrapper {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------- */
+p.useful-description {
+    width: 100%;
+    font-size: 16px;
+    line-height: 140%;
+    text-indent: 30px;
+    text-align: justify;
+    color: #FFFFFF;
+}
+
+
+
+/* ---------------------------- */
+/* Arrow */
+/* ---------------------------- */
+.useful-description-arrow_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    /* ------------ */
+    font-weight: 500;
+    font-size: 20px;
+    /* ------------ */
+    width: 100%;
+    margin-top: 2%;
+}
+
+.useful-description-arrow_icon {
+    width: 30px;
+    margin-left: 10px;
+    fill: #fff;
+}
+
+/* ---------------------------- */
+
+
+
+@media (max-width: 1920px) {
+
+    .useful_wrapper {
+        max-width: calc(290px + (1600 - 290) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+
+    /* Usefuls card */
+    /* --------------------------------- */
+    a.useful_card {
+        width: calc(270px + (320 - 270) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(190px + (240 - 190) * ((100vw - 320px) / (1920 - 320)));
+        margin: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* end Usefuls card */
+}

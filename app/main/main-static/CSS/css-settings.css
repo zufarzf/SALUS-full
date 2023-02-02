@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: "Roboto";
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* ------------------------------------------ */
+html {
+    height: 100%;
+}
+
+body {
+    /* ------------------------ */
+    background-image: url('../static_files/svg_background/svg_background.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* ------------------------ */
+    line-height: 1;
+    font-size: 16px;
+}
+
+/* ------------------------------------------ */
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+/* ------------------------------------------ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ==================================================== */
+*::selection {
+    background: #facb49d3;
+    color: #506988e0;
+}
+
+/* ---------------------------------------------------- */
+
+
+/* Scroll bar */
+/* ---------------------------------------------------- */
+*::-webkit-scrollbar,
+html *::-webkit-scrollbar {
+    height: 12px;
+    width: 4px;
+}
+
+*::-webkit-scrollbar-track,
+html *::-webkit-scrollbar-track {
+    background: linear-gradient(101.61deg, #56e0d899 0%, #47bbb450 98.82%);
+    border-radius: 9px;
+}
+
+*::-webkit-scrollbar-thumb,
+html *::-webkit-scrollbar-thumb {
+    background: linear-gradient(101.61deg, #566e8c99 0%, #566e8c99 98.82%);
+    border-radius: 9px;
+}
+
+/* 
+
+::-webkit-scrollbar-button {
+    width: 10%;
+    height: 10%;
+} */
+
+/* ===================================================== */
+
+
+/* Body */
+/* ===================================================== */
+html,
+body {
+    height: 100%;
+}
+
+.body_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* ------------ */
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.glass_window {
+    width: 100%;
+    background: linear-gradient(142.89deg, #ecececa5 0.85%,
+            #d9d9d900 104.42%,
+            #ffffff50 104.42%);
+    box-shadow: 8px 5px 14px #00000045;
+    backdrop-filter: blur(12px);
+    /* ----------------------- */
+    border-radius: 9px;
+    /* ----------------------- */
+    max-height: 1080px;
+    overflow: hidden;
+}
+
+.content_window {
+    overflow-y: auto;
+    margin-top: 20px;
+    max-height: 850px;
+    height: 100%;
+    z-index: 10;
+}
+
+
+/* -------------------------- */
+header {
+    padding: 15px;
+}
+
+
+/* Message body */
+/* -------------------------- */
+.message-body {
+    z-index: 1020;
+    padding: 10px;
+    max-width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+    position: absolute;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    top: 20px;
+    left: 20px;
+    border-radius: 9px;
+    color: #566E8C;
+    background-color: #8dd4d4e8;
+}
+
+.message-body.invalide-message {
+    color: #ffffff;
+    background-color: #e22d54e8;
+}
+
+/* Logotype  */
+/* =============================== */
+.logotype_container {
+    display: flex;
+    align-items: center;
+}
+
+.text_logotype {
+    font-family: 'Montserrat';
+    color: #566E8C;
+}
+
+/* =============================== */
+/* end Logotype  */
+
+
+
+
+/* Page title */
+/* =============================== */
+h1.page_title {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 64px;
+    margin: 50px 0;
+    color: #566E8C;
+    text-align: center;
+}
+
+@media (max-width: 1920px) {
+    h1.page_title {
+        font-size: calc(38px + (64 - 38) * ((100vw - 320px) / (1920 - 320)));
+        margin: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320))) 0;
+    }
+}
+
+/* =============================== */
+/* end Page title */
+
+
+
+/* Swiper style */
+/* =============================== */
+
+/* cards_swiper_pagination */
+/* ------------------------------ */
+.cards_swiper_pagination {
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff00;
+}
+
+.swiper-pagination-bullet {
+    border: 4px solid #8dd4d4;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    border: 4px solid #fcd359;
+    opacity: 0.95;
+}
+
+/* ------------------------------ */
+/* end cards_swiper_pagination */
+
+
+
+
+
+
+/* btn-Make an appointment wrapper */
+/* ---------------------------------- */
+.btn-make_an_appointment_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* ---------------------- */
+    max-width: 287px;
+    max-height: 73px;
+    border-radius: 4px;
+}
+
+/* ---------------------------------- */
+
+
+/* btn-Make an appointment */
+/* ---------------------------------- */
+a.btn-make_an_appointment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    /* ---------------------- */
+    width: 100%;
+    height: 100%;
+    /* ---------------------- */
+    padding: 22px;
+    /* ---------------------- */
+    font-weight: 400;
+    font-size: 24px;
+    /* ---------------------- */
+    color: #FFFFFF;
+}
+
+/* ---------------------------------- */
+
+
+span.btn-make_an_appointment_background,
+a.btn-make_an_appointment::after {
+    display: block;
+    position: absolute;
+    /* ------------- */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* -------- */
+    transition: 0.5s;
+}
+
+span.btn-make_an_appointment_background {
+    right: 0;
+    background: linear-gradient(97.25deg, #566e8cb3 26.54%, #566e8c5b 97.45%);
+}
+
+
+a.btn-make_an_appointment::after {
+    content: '';
+    right: 100%;
+    background-color: #566e8cb3;
+}
+
+/* btn-Make an appointment : Hover */
+/* ---------------------------------- */
+.btn-make_an_appointment_wrapper:hover span.btn-make_an_appointment_background {
+    right: -100%;
+}
+
+.btn-make_an_appointment_wrapper:hover a.btn-make_an_appointment::after {
+    right: 0;
+}
+
+/* ---------------------------------- */
+/* end btn-Make an appointment : Hover */
+
+
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+
+/* Input style */
+/* ------------------------------------ */
+.input_style {
+    padding: 0 20px;
+    border-radius: 9px;
+    /* ---------------------- */
+    color: #566e8cfa;
+    background: #e8e8e887;
+    /* ---------------------- */
+    font-family: 'Montserrat';
+    font-size: 24px;
+}
+
+/* ------------------------------------ */
+/* end Input style */
+
+
+/* Submit btn  */
+/* ------------------------------------ */
+.input_submit {
+    font-family: 'Montserrat';
+    font-size: 32px;
+    /* ---------- */
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0 10px 0;
+    border-radius: 8px;
+    /* -------------- */
+    color: #fffffff1;
+    background: #617da0ce;
+    /* -------------- */
+    cursor: pointer;
+    white-space: nowrap;
+    transition-duration: 0.3s;
+    transition-property: color background;
+}
+
+/* ------------------------------------ */
+.input_submit:hover {
+    background: #617da0;
+}
+
+/* ------------------------------------ */
+/* end Submit btn  */
+
+
+/* ================================================ */
+@media (max-width: 1920px) {
+
+    /* ---------------------------------- */
+    .input_submit {
+        font-size: calc(16px + (32 - 16) * ((100vw - 320px) / (1920 - 320)));
+        margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))) 0 10px 0;
+    }
+
+    /* ---------------------------------- */
+    .input_style {
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ---------------------------------- */
+}
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+
+/* Hme IT Group initials */
+/* ------------------------------------ */
+a.hme_initials_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ------------------ */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* ------------------------------------ */
+a.hme_initials_link svg {
+    width: 60px;
+}
+
+/* ------------------------------------ */
+.hme_initials-text {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 16px;
+    color: #566E8C;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+/* ------------------------------------ */
+
+/* ---------------------------------- */
+@media (max-width: 1920px) {
+    a.hme_initials_link svg {
+        width: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+    }
+}
+
+/* ---------------------------------- */
+
+/* ---------------------------------- */
+/* end Hme IT Group initials */
+
+
+
+/* ================================================ */
+@media (max-width: 1920px) {
+
+    /* btn-Make an appointment */
+    a.btn-make_an_appointment {
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /* ---------------------------------- */
+}
+
+/* ---------------------------------- */
+/* end btn-Make an appointment wrapper */
+
+
+
+
+
+
+
+/* ---------------------------------------------- */
+@media (max-width: 1920px) {
+    .body_wrapper {
+        padding: calc(10px + (20 - 10) * ((100vw - 480px) / (1920 - 480)));
+    }
+
+    header {
+        padding: calc(7px + (15 - 7) * ((100vw - 480px) / (1920 - 480)));
+    }
+
+    .cards_swiper_pagination {
+        margin-top: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
+}
+
+@media (max-height: 1080px) {
+    .cards_swiper_pagination {
+        margin-top: calc(20px + (40 - 20) * ((100vh - 530px) / (1080 - 530)));
+    }
+}
+
+@media (max-width: 480px) {
+    .body_wrapper {
+        padding: 10px;
+    }
+
+    header {
+        padding: 7px;
+    }
+}
+
+/* ===================================================== */
+/* Body */

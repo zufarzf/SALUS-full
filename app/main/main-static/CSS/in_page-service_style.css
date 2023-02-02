@@ -1,0 +1,192 @@
+main.service-main {
+    max-width: 1520px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+
+/* --------------------- */
+.options_wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.site_map-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    border-radius: 6px;
+    padding: 10px;
+    color: #486488de;
+}
+
+a.site_map {
+    color: #486488de;
+}
+
+p.site_map {
+    color: #e3af28de;
+}
+
+/* --------------------- */
+
+a.make_an_appointment-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-size: 18px;
+
+    padding: 12px;
+    border-radius: 4px;
+    margin-left: 20px;
+
+    background: #566e8cba;
+    color: #ffffffde;
+    transition: background 0.2s;
+}
+
+a.make_an_appointment-btn:hover {
+    background: #566e8ce0;
+}
+
+/* --------------------- */
+
+
+
+/* --------------------- */
+.post_wrapper {
+    color: #486488;
+    text-align: justify;
+    line-height: 140%;
+    text-indent: 3%;
+    padding: 0 10px;
+}
+
+.post_wrapper a {
+    color: #2e9778;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: justify;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.post_wrapper a:hover {
+    color: #d1b829;
+}
+
+.post_wrapper img {
+    display: block;
+    margin: 15px auto;
+    border-radius: 9px;
+    max-width: 1180px;
+    width: 100%;
+}
+
+/* .post_wrapper img.post_wrapper-img {
+    margin: 15px auto;
+} */
+
+h1.post-title {
+    text-indent: 0;
+    text-indent: 0;
+    font-size: 50px;
+    line-height: 59px;
+    text-align: left;
+    margin-right: 40px;
+}
+
+span.service_price {
+    display: flex;
+    justify-content: start;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+/* --------------------- */
+.doctors_slider-container {
+    margin-bottom: 40px;
+}
+
+.doctors_slider {
+    overflow: hidden;
+    border-radius: 9px;
+}
+
+h1.doctors_slider-title {
+    margin: 40px 0 20px 0;
+    text-indent: 1%;
+    font-size: 40px;
+    color: #486488;
+}
+
+.doctors_swipper_slider {
+    border-radius: 9px;
+
+}
+
+.doctor_card {
+    margin: 0;
+}
+
+/* --------------------- */
+
+
+
+@media (max-width: 1920px) {
+    a.make_an_appointment-btn {
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    main.service-main {
+        margin: calc(0px + 50 * ((100vw - 320px) / (1920 - 320))) auto;
+    }
+
+
+    /* --------------- */
+    .post_wrapper {
+        padding: 0 calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+
+    h1.post-title {
+        font-size: calc(24px + (50 - 24) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(33px + (59 - 33) * ((100vw - 320px) / (1920 - 320)));
+        margin-right: calc(10px + (40 - 10) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    span.service_price {
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        margin: calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320))) 0;
+    }
+
+
+    h1.doctors_slider-title {
+        font-size: calc(24px + (40 - 24) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+}
+
+@media (max-width: 640px) {
+    .options_wrapper {
+        flex-direction: column;
+    }
+
+    a.make_an_appointment-btn {
+        margin-left: 0;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 470px) {
+    .doctors_slider-container {
+        padding: 0 calc(0px + (70 - 0) * ((100vw - 320px) / (470 - 320)));
+    }
+
+}

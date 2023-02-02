@@ -1,0 +1,263 @@
+{% extends 'base_template/base_template.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/useful_style.css') }}">
+{% endblock head %}
+
+
+
+
+{% block navbar %}
+{% if session['lang'] == 'ru' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item active_page">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Контакты</a>
+</nav>
+{% elif session['lang'] == 'en' %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item active_page">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Contacts</a>
+</nav>
+{% else %}
+<nav class="header-nav_bar">
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Bosh sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item active_page">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item">Ro'yxatdan o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item">Biz haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item">Aloqa</a>
+</nav>
+{% endif %}
+{% endblock navbar %}
+
+
+
+
+{% block burger_navbar %}
+<div class="burger_button-nav_bar-item__wrapper">
+    {% if session['lang'] == 'ru' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Главная</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Услуги</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Врачи</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Результаты</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Полезное</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Записаться</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">О нас</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Контакты</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% elif session['lang'] == 'en' %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Main</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Services</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Doctors</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Results</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Usefuls</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Sign up</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">About</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Contacts</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% else %}
+
+    <!-- Nav item -->
+    <!-- ------------------------------------------------------------ -->
+    <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Bosh
+        sahifa</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Xizmatlar</a>
+    <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Shifokorlar</a>
+    <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Natijalar</a>
+    <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Foydali</a>
+    <a href="{{ url_for('main.make_an_appointment') }}" class="nav_bar-item burger_button-nav_bar-item">Ro'yxatdan
+        o'tish</a>
+    <a href="{{ url_for('main.about') }}" class="nav_bar-item burger_button-nav_bar-item">Biz
+        haqimizda</a>
+    <a href="{{ url_for('main.contacts') }}" class="nav_bar-item burger_button-nav_bar-item">Aloqa</a>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end Nav item -->
+
+
+    <!-- burger enter btns -->
+    <!-- ------------------------------------------------------------ -->
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN
+            O'TISH</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- end burger enter btns -->
+    {% endif %}
+</div>
+{% endblock burger_navbar %}
+
+
+
+
+
+{% block content %}
+
+<main class="useful-main">
+
+
+    <!-- Page name -->
+    <!-- ----------------------------------- -->
+    <h1 class="page_title">{{ page_title }}</h1>
+    <!-- ----------------------------------- -->
+    <!-- end Page name -->
+
+
+    <!-- ========================================== -->
+    <!-- ========================================== -->
+
+
+    <!-- Useful wrapper -->
+    <!-- ----------------------------------- -->
+    <div class="useful_wrapper">
+
+
+        <!-- Useful container -->
+        <!-- ----------------------------------- -->
+        <div class="useful_container">
+
+
+            {% for art in arts %}
+
+            <!-- Card -->
+            <!-- ----------------------------------- -->
+            <a href="{{ url_for('main.arts_item', arts_id=art.id) }}" class="useful_card">
+
+                <!-- Useful photo -->
+                <!-- --------------------------------------------------------------------------------- -->
+                <img src="{{ url_for('main.static', filename='static_files/useful/usefuls-images/'+art.photo) }}"
+                    alt="useful_title" class="useful_photo">
+                <!-- --------------------------------------------------------------------------------- -->
+                <!-- end Useful photo -->
+
+
+                <!-- Useful info container -->
+                <!-- -------------------------------------------- -->
+                <div class="useful_info_container">
+
+                    <!-- Useful description wrapper -->
+                    <!-- ------------------------------------------- -->
+                    <div class="useful-description_wrapper">
+                        <!-- ------------------------------ -->
+                        <h1 class="useful-post_name">{{ art.title[0:20] }}...</h1>
+                        <!-- ------------------------------ -->
+
+                        <!-- Useful -> post date -->
+                        <!-- ------------------------------ -->
+                        <div class="useful-post_date_wrapper">
+                            <!-- ------------------------------ -->
+                            <svg class="useful-post_date_icon" width="14" height="15" viewBox="0 0 15 16" fill="none">
+                                <path d="M8.01562 7.6438H5.98438V9.67505H8.01562V7.6438Z" fill="white" />
+                                <path d="M11.2002 7.6438H9.16895V9.67505H11.2002V7.6438Z" fill="white" />
+                                <path d="M4.83496 10.7313H2.80371V12.7626H4.83496V10.7313Z" fill="white" />
+                                <path d="M8.01562 10.7313H5.98438V12.7626H8.01562V10.7313Z" fill="white" />
+                                <path d="M11.2002 10.7313H9.16895V12.7626H11.2002V10.7313Z" fill="white" />
+                                <path
+                                    d="M3.86934 3.8688C3.36934 3.8688 2.95996 3.45942 2.95996 2.95942V0.912549C2.95996 0.412549 3.36934 0.00317383 3.86934 0.00317383C4.36934 0.00317383 4.77871 0.412549 4.77871 0.912549V2.96255C4.77871 3.45942 4.36934 3.8688 3.86934 3.8688Z"
+                                    fill="white" />
+                                <path
+                                    d="M12.4598 1.93445H11.4285V3.17507C11.4285 3.9407 10.8129 4.5657 10.0598 4.5657H9.69726C8.94414 4.5657 8.32852 3.9407 8.32852 3.17507V1.93445H5.50352V3.17507C5.50352 3.9407 4.88789 4.5657 4.13477 4.5657H3.77227C3.01914 4.5657 2.40352 3.9407 2.40352 3.17507V1.93445H1.61289C0.766016 1.93445 0.0722656 2.63757 0.0722656 3.49695V14.4344C0.0722656 15.2938 0.766016 15.9969 1.61289 15.9969H12.4629C13.3098 15.9969 14.0035 15.2938 14.0035 14.4344V3.49695C14.0004 2.63757 13.3066 1.93445 12.4598 1.93445ZM12.1973 12.9594C12.1973 13.4938 11.766 13.9313 11.241 13.9313H2.83477C2.30977 13.9313 1.87852 13.4938 1.87852 12.9594V7.44695C1.87852 6.91257 2.30977 6.43757 2.83477 6.43757H11.241C11.766 6.43757 12.1973 6.91257 12.1973 7.44695V12.9594Z"
+                                    fill="white" />
+                                <path
+                                    d="M9.88496 3.8688C9.38496 3.8688 8.97559 3.45942 8.97559 2.95942V0.912549C8.97559 0.412549 9.38496 0.00317383 9.88496 0.00317383C10.385 0.00317383 10.7943 0.412549 10.7943 0.912549V2.96255C10.7943 3.45942 10.385 3.8688 9.88496 3.8688Z"
+                                    fill="white" />
+                            </svg>
+                            <!-- ------------------------------ -->
+                            {{ moment(art.created_date).format('L') }}
+                        </div>
+                        <!-- ------------------------------ -->
+                        <!-- end Useful -> post date -->
+
+                        <!-- ------------------------------ -->
+                        <div class="useful-description-text_wrapper">
+                            <!-- ------------------------------ -->
+                            <div class="useful-description-text_wrapper-wrapper">
+                                <!-- ------------------------------ -->
+                                <div class="useful-description-arrow_wrapper">
+                                    {% if session['lang'] == 'ru' %}
+                                    Перейти
+                                    {% elif session['lang'] == 'en' %}
+                                    Go over
+                                    {% else %}
+                                    O'tish
+                                    {% endif %}
+                                    <svg class="useful-description-arrow_icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M15.7071 5.29289C15.3166 4.90237 14.6834 4.90237 14.2929 5.29289C13.9024 5.68342 13.9024 6.31658 14.2929 6.70711L18.5858 11L3 11C2.44772 11 2 11.4477 2 12C2 12.5523 2.44772 13 3 13L18.5858 13L14.2929 17.2929C13.9024 17.6834 13.9024 18.3166 14.2929 18.7071C14.6834 19.0976 15.3166 19.0976 15.7071 18.7071L21.7071 12.7071C22.0976 12.3166 22.0976 11.6834 21.7071 11.2929L15.7071 5.29289Z" />
+                                    </svg>
+                                </div>
+                                <!-- ------------------------------ -->
+                            </div>
+                            <!-- ------------------------------ -->
+                        </div>
+                        <!-- ------------------------------ -->
+
+                    </div>
+                    <!-- ------------------------------------------- -->
+                    <!-- end Useful description wrapper -->
+
+
+                </div>
+                <!-- -------------------------------------------- -->
+                <!-- end Useful info container -->
+
+            </a>
+            <!-- ----------------------------------- -->
+            <!-- end Card -->
+
+            {% endfor %}
+
+
+        </div>
+        <!-- ----------------------------------- -->
+        <!-- end Useful container -->
+
+
+    </div>
+    <!-- ----------------------------------- -->
+    <!-- end Useful wrapper -->
+
+
+</main>
+
+{% endblock content %}
