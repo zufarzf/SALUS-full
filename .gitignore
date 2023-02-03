@@ -2,7 +2,7 @@
 /migrations
 /env
 /instance
+/app/data.db
 /app/__pycache__
 /app/main/__pycache__
 /app/admin/__pycache__
-/app/data.db
