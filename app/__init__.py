@@ -32,6 +32,9 @@ def create_app(config_name):
 
     from .main import main
     from .admin import admin_panel
+    from .seo import seo
     app.register_blueprint(main)
     app.register_blueprint(admin_panel) 
+    app.register_blueprint(seo, url_prefix='/SEO') 
+
     return app

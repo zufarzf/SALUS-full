@@ -2,6 +2,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/services_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('seo.static', filename='CSS/seo_menu_style.css') }}">
 {% endblock head %}
 
 
@@ -12,7 +13,7 @@
 {% if session['lang'] == 'ru' %}
 <nav class="header-nav_bar">
     <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Главная</a>
-    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Услуги</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Услуги</a>
     <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Врачи</a>
     <a href="{{ url_for('main.results') }}" class="nav_bar-item">Результаты</a>
     <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Полезное</a>
@@ -23,7 +24,7 @@
 {% elif session['lang'] == 'en' %}
 <nav class="header-nav_bar">
     <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Main</a>
-    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Services</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Services</a>
     <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Doctors</a>
     <a href="{{ url_for('main.results') }}" class="nav_bar-item">Results</a>
     <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Usefuls</a>
@@ -34,7 +35,7 @@
 {% else %}
 <nav class="header-nav_bar">
     <a href="{{ url_for('main.main_page') }}" class="nav_bar-item">Bosh sahifa</a>
-    <a href="{{ url_for('main.services') }}" class="nav_bar-item active_page">Xizmatlar</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item">Xizmatlar</a>
     <a href="{{ url_for('main.doctors') }}" class="nav_bar-item">Shifokorlar</a>
     <a href="{{ url_for('main.results') }}" class="nav_bar-item">Natijalar</a>
     <a href="{{ url_for('main.arts') }}" class="nav_bar-item">Foydali</a>
@@ -57,7 +58,7 @@
     <!-- Nav item -->
     <!-- ------------------------------------------------------------ -->
     <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Главная</a>
-    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Услуги</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Услуги</a>
     <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Врачи</a>
     <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Результаты</a>
     <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Полезное</a>
@@ -69,22 +70,11 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
-    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="{{ url_for('admin.index') }}"
             class="burger_button-enter header-enter header-sign_up-btn">АДМИНИСТРАЦИЯ</a>
         <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">ВЫЙТИ</a>
     </div>
-    {% elif 'user_login' not in session and 'admin_login' not in session %}
-    <div class="burger_button-enter_btns_wrapper">
-        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
-        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
-    </div>
-    {% elif 'user_login' in session and 'admin_login' not in session %}
-    <div class="burger_button-enter_btns_wrapper">
-        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">ВЫЙТИ</a>
-    </div>
-    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% elif session['lang'] == 'en' %}
@@ -92,7 +82,7 @@
     <!-- Nav item -->
     <!-- ------------------------------------------------------------ -->
     <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Main</a>
-    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Services</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Services</a>
     <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Doctors</a>
     <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Results</a>
     <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Usefuls</a>
@@ -104,22 +94,11 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
-    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="{{ url_for('admin.index') }}"
             class="burger_button-enter header-enter header-sign_up-btn">ADMINISTRATION</a>
         <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">LOG OUT</a>
     </div>
-    {% elif 'user_login' not in session and 'admin_login' not in session %}
-    <div class="burger_button-enter_btns_wrapper">
-        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
-        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
-    </div>
-    {% elif 'user_login' in session and 'admin_login' not in session %}
-    <div class="burger_button-enter_btns_wrapper">
-        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">LOG OUT</a>
-    </div>
-    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% else %}
@@ -128,7 +107,7 @@
     <!-- ------------------------------------------------------------ -->
     <a href="{{ url_for('main.main_page') }}" class="nav_bar-item burger_button-nav_bar-item">Bosh
         sahifa</a>
-    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item active_page">Xizmatlar</a>
+    <a href="{{ url_for('main.services') }}" class="nav_bar-item burger_button-nav_bar-item">Xizmatlar</a>
     <a href="{{ url_for('main.doctors') }}" class="nav_bar-item burger_button-nav_bar-item">Shifokorlar</a>
     <a href="{{ url_for('main.results') }}" class="nav_bar-item burger_button-nav_bar-item">Natijalar</a>
     <a href="{{ url_for('main.arts') }}" class="nav_bar-item burger_button-nav_bar-item">Foydali</a>
@@ -143,22 +122,11 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
-    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="{{ url_for('admin.index') }}"
             class="burger_button-enter header-enter header-sign_up-btn">ADMINISTRATSIYA</a>
         <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">CHIQISH</a>
     </div>
-    {% elif 'user_login' not in session and 'admin_login' not in session %}
-    <div class="burger_button-enter_btns_wrapper">
-        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN O'TISH</a>
-        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
-    </div>
-    {% elif 'user_login' in session and 'admin_login' not in session %}
-    <div class="burger_button-enter_btns_wrapper">
-        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">CHIQISH</a>
-    </div>
-    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% endif %}
@@ -176,7 +144,7 @@
 
     <!-- Page name -->
     <!-- ----------------------------------- -->
-    <h1 class="page_title">{{ page_title }}</h1>
+    <h1 class="page_title">META TAGS</h1>
     <!-- ----------------------------------- -->
     <!-- end Page name -->
 
@@ -184,102 +152,15 @@
     <!-- ========================================== -->
     <!-- ========================================== -->
 
-
-    <!-- Services -> sections wrapper -->
-    <!-- ----------------------------------- -->
-    <div class="services-sections_wrapper">
-
-        <!-- Services -> sections container -->
-        <!-- ----------------------------------- -->
-        <div class="services-sections_container">
-
-
-            {% for i in division %}
-            <!-- Services -> section -->
-            <!-- ----------------------------------- -->
-            <div class="services-section">
-
-                <!-- section name -->
-                <!-- ----------------------------------- -->
-                <a href="" class="services-section_name">
-                    <!-- ----------------------------------- -->
-                    <div class="services-section_name-wrapper">
-                        <!-- ----------------------------------- -->
-                        {{ i.icon | safe }}
-                        <!-- ----------------------------------- -->
-                        <h1 class="section_name">{{ i.name }}</h1>
-                        <!-- ----------------------------------- -->
-                    </div>
-                    <!-- ----------------------------------- -->
-                    <!-- <div class="services-section_name-open_wrapper">
-                            <span class="services-section_name-open"></span>
-                        </div> -->
-                    <span class="services-section_name-open"></span>
-                    <!-- ----------------------------------- -->
-                </a>
-                <!-- ----------------------------------- -->
-                <!-- end section name -->
-
-
-                <!-- Services section list -->
-                <!-- ----------------------------------- -->
-                <div class="services-section-list">
-                    <!-- ----------------------------------- -->
-                    <div class="services-section-list_wrapper">
-
-
-                        {% for service in services[i.name] %}
-
-                        <!-- Service -->
-                        <!-- ----------------------------------- -->
-                        <div class="service">
-                            <!-- ----------------------------------- -->
-                            <a href="{{ url_for('main.service_item', service_id=service.id) }}"
-                                class="service_text service_name">{{ service.name }}</a>
-                            <!-- ----------------------------------- -->
-                            {% if session['lang'] == 'ru' %}
-                            <a href="{{ url_for('main.make_an_appointment') }}" class="sign_up">записаться</a>
-                            {% elif session['lang'] == 'en' %}
-                            <a href="{{ url_for('main.make_an_appointment') }}" class="sign_up">enroll</a>
-                            {% else %}
-                            <a href="{{ url_for('main.make_an_appointment') }}" class="sign_up">yozilish</a>
-                            {% endif %}
-                            <!-- ----------------------------------- -->
-                            {% if session['lang'] == 'ru' %}
-                            <p class="service_text service_price">{{ service.price }} сум</p>
-                            {% elif session['lang'] == 'en' %}
-                            <p class="service_text service_price">{{ service.price }} som</p>
-                            {% else %}
-                            <p class="service_text service_price">{{ service.price }} UZD</p>
-                            {% endif %}
-                            <!-- ----------------------------------- -->
-                        </div>
-                        <!-- ----------------------------------- -->
-                        <!-- end Service -->
-
-                        {% endfor %}
-
-
-                    </div>
-                    <!-- ----------------------------------- -->
-                </div>
-                <!-- ----------------------------------- -->
-                <!-- end Services section list -->
-
-
-            </div>
-            <!-- ----------------------------------- -->
-            <!-- end Services -> section -->
-            {% endfor %}
-
-
-        </div>
-        <!-- ----------------------------------- -->
-        <!-- end Services -> sections container -->
-
-    </div>
-    <!-- ----------------------------------- -->
-    <!-- end Services -> sections wrapper -->
+    <nav class="seo_menu">
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">Главная</a>
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">Услуги</a>
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">Врачи</a>
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">Результаты</a>
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">Полезное</a>
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">О нас</a>
+        <a href="{{ url_for('seo.seo_menu') }}" class="seo_item">Контакты</a>
+    </nav>
 
 
 </main>

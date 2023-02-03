@@ -20,7 +20,7 @@ def load_user(user_id):
 
 # ==============================================================================
 # ==============================================================================
-@main.route('/')  # Главня страница
+@main.route('/') # Главня страница
 def main_page():
     #  ============= FOR CRUD ITEMS IN SERVICES AND ART =============
     session['item_id'] = None
@@ -345,23 +345,29 @@ def login():
         name = form.name.data
         psw = form.psw.data
 
-        users = Users.query.all()
+        user = Users.query.filter_by(name=name).first()
 
-        for user in users:
-            pas = check_password_hash(user.psw, psw)
-            user_per = Users.query.filter_by(name=name).first()
-            if user.name == name and pas:
-                userlogin = UserLogin().create(user_per)
+        if user:
+            if check_password_hash(user.psw, psw):
+                userlogin = UserLogin().create(user)
                 rm = True if form.remember.data else False
                 login_user(userlogin, remember=rm)
-                # if user.is_admin == True:
-                #     l = Log(login = name, parol=psw)
-                #     db.session.add(l)
-                #     db.session.commit()
+                if user.is_admin: session['admin_login'] = True
+                session['user_login'] = user.id
                 return redirect(url_for('admin.index'))
             else:
+                if session['lang'] == 'uz':
+                    flash("Noto'g'ri login yoki parol!", category='invalide-message')
+                if session['lang'] == 'ru':
+                    flash("Неправильный логин или пароль!", category='invalide-message')
+                else: flash("Incorrect login or password!", category='invalide-message')
                 return redirect(url_for('main.main_page'))
-
+        else: 
+            if session['lang'] == 'uz':
+                flash("Noto'g'ri login yoki parol!", category='invalide-message')
+            if session['lang'] == 'ru':
+                flash("Неправильный логин или пароль!", category='invalide-message')
+            else: flash("Incorrect login or password!", category='invalide-message')
 
     if session['lang'] == 'uz': page_title = 'Kirish'
     elif session['lang'] == 'ru': page_title = 'Вход'
@@ -378,6 +384,8 @@ def login():
 @main.route('/logout')
 def logout():
     logout_user()
+    del session['admin_login']
+    del session['user_login']
     return redirect(url_for('main.main_page'))
 
 

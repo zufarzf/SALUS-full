@@ -1,0 +1,33 @@
+.seo_menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+a.seo_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    margin: 5px;
+    width: 270px;
+    min-width: 270px;
+    min-height: 50px;
+    border-radius: 7px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    white-space: nowrap;
+
+    color: #ffffff;
+    background-color: #61cac1ec;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+a.seo_item:hover {
+    background-color: #61cac1bb;
+}

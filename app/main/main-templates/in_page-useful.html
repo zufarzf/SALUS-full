@@ -69,10 +69,22 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
+    {% if 'admin_login' in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('admin.index') }}"
+            class="burger_button-enter header-enter header-sign_up-btn">АДМИНИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">ВЫЙТИ</a>
+    </div>
+    {% elif 'user_login' not in session and 'admin_login' not in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
         <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
     </div>
+    {% elif 'user_login' in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">ВЫЙТИ</a>
+    </div>
+    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% elif session['lang'] == 'en' %}
@@ -92,10 +104,22 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
+    {% if 'admin_login' in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('admin.index') }}"
+            class="burger_button-enter header-enter header-sign_up-btn">ADMINISTRATION</a>
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">LOG OUT</a>
+    </div>
+    {% elif 'user_login' not in session and 'admin_login' not in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
         <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
     </div>
+    {% elif 'user_login' in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">LOG OUT</a>
+    </div>
+    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% else %}
@@ -119,11 +143,22 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
+    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
-        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN
-            O'TISH</a>
+        <a href="{{ url_for('admin.index') }}"
+            class="burger_button-enter header-enter header-sign_up-btn">ADMINISTRATSIYA</a>
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">CHIQISH</a>
+    </div>
+    {% elif 'user_login' not in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN O'TISH</a>
         <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
     </div>
+    {% elif 'user_login' in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">CHIQISH</a>
+    </div>
+    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% endif %}

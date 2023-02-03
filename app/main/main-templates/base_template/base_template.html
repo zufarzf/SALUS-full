@@ -203,25 +203,73 @@
                         <!-- ==================================================== -->
                         <!-- end Language -->
 
-
                         <!-- Enter buttons -->
+                        <!-- ================================= -->
+                        {% if 'admin_login' in session %}
+                        <!-- ================================= -->
                         <!-- ================================= -->
                         {% if session['lang'] == 'ru' %}
                         <div class="header-enter_btns_wrapper">
-                            <a href="" class="header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+                            <a href="{{ url_for('admin.index') }}"
+                                class="header-enter header-sign_up-btn">АДМИНИСТРАЦИЯ</a>
+                            <a href="{{ url_for('main.logout') }}" class="header-enter header-sign_in-btn">ВЫЙТИ</a>
+                        </div>
+                        {% elif session['lang'] == 'en' %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="{{ url_for('admin.index') }}"
+                                class="header-enter header-sign_up-btn">ADMINISTRATION</a>
+                            <a href="{{ url_for('main.logout') }}" class="header-enter header-sign_in-btn">LOG OUT</a>
+                        </div>
+                        {% else %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="{{ url_for('admin.index') }}"
+                                class="header-enter header-sign_up-btn">ADMINISTRATSIYA</a>
+                            <a href="{{ url_for('main.logout') }}" class="header-enter header-sign_in-btn">CHIQISH</a>
+                        </div>
+                        {% endif %}
+                        <!-- ================================= -->
+                        <!-- ================================= -->
+                        {% elif 'user_login' not in session and 'admin_login' not in session %}
+                        <!-- ================================= -->
+                        <!-- ================================= -->
+                        {% if session['lang'] == 'ru' %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="#" class="header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
                             <a href="{{ url_for('main.login') }}" class="header-enter header-sign_in-btn">ВОЙТИ</a>
                         </div>
                         {% elif session['lang'] == 'en' %}
                         <div class="header-enter_btns_wrapper">
-                            <a href="" class="header-enter header-sign_up-btn">REGISTRATION</a>
+                            <a href="#" class="header-enter header-sign_up-btn">REGISTRATION</a>
                             <a href="{{ url_for('main.login') }}" class="header-enter header-sign_in-btn">SIGN IN</a>
                         </div>
                         {% else %}
                         <div class="header-enter_btns_wrapper">
-                            <a href="" class="header-enter header-sign_up-btn">RO'YXATDAN O'TISH</a>
+                            <a href="#" class="header-enter header-sign_up-btn">RO'YXATDAN O'TISH</a>
                             <a href="{{ url_for('main.login') }}" class="header-enter header-sign_in-btn">KIRISH</a>
                         </div>
                         {% endif %}
+                        <!-- ================================= -->
+                        <!-- ================================= -->
+                        {% elif 'user_login' in session and 'admin_login' not in session %}
+                        <!-- ================================= -->
+                        <!-- ================================= -->
+                        {% if session['lang'] == 'ru' %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="{{ url_for('main.logout') }}" class="header-enter header-sign_in-btn">ВЫЙТИ</a>
+                        </div>
+                        {% elif session['lang'] == 'en' %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="{{ url_for('main.logout') }}" class="header-enter header-sign_in-btn">LOG OUT</a>
+                        </div>
+                        {% else %}
+                        <div class="header-enter_btns_wrapper">
+                            <a href="{{ url_for('main.logout') }}" class="header-enter header-sign_in-btn">CHIQISH</a>
+                        </div>
+                        {% endif %}
+                        <!-- ================================= -->
+                        <!-- ================================= -->
+                        {% endif %}
+                        <!-- ================================= -->
                         <!-- ================================= -->
                         <!-- end Enter buttons -->
 
