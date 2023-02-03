@@ -208,6 +208,7 @@
 
                 <!-- Form -->
                 <!-- ----------------------------------- -->
+                {% if session['lang'] == 'ru' %}
                 <form action="" class="results-form">
                     <!-- ----------------------------------- -->
                     <input placeholder="ID или Login" type="text" class="input_style results-input">
@@ -217,9 +218,29 @@
                     <input type="submit" value="УЗНАТЬ РЕЗУЛЬТАТЫ" class="input_submit results-submit">
                     <!-- ----------------------------------- -->
                 </form>
+                {% elif session['lang'] == 'en' %}
+                <form action="" class="results-form">
+                    <!-- ----------------------------------- -->
+                    <input placeholder="ID or Login" type="text" class="input_style results-input">
+                    <!-- ----------------------------------- -->
+                    <input placeholder="Password" type="password" name="" id="" class="input_style results-input">
+                    <!-- ----------------------------------- -->
+                    <input type="submit" value="DISCOVER THE RESULTS" class="input_submit results-submit">
+                    <!-- ----------------------------------- -->
+                </form>
+                {% else %}
+                <form action="" class="results-form">
+                    <!-- ----------------------------------- -->
+                    <input placeholder="ID yoki Login" type="text" class="input_style results-input">
+                    <!-- ----------------------------------- -->
+                    <input placeholder="Parol" type="password" name="" id="" class="input_style results-input">
+                    <!-- ----------------------------------- -->
+                    <input type="submit" value="NATIJALARNI KO'RISH" class="input_submit results-submit">
+                    <!-- ----------------------------------- -->
+                </form>
+                {% endif %}
                 <!-- ----------------------------------- -->
                 <!-- end Form -->
-
 
             </div>
             <!-- ----------------------------------- -->

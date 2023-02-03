@@ -77,13 +77,23 @@ def main_page():
     art_right = {}
     if art_lang(art)[3]: art_right = art_lang(art)[3]
 
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='main').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+
     return render_template("main.html", 
                             division = division,
                             personal = personal, 
                             art_left = art_left,
                             art_right = art_right,
                             about = about,
-                            page_title="SALUS"
+                            page_title="SALUS",
+                            keywords=keywords,
+                            description=description
                             )
 
 
@@ -135,12 +145,23 @@ def services():
                             ]
                         
                         !!! KEY - Отделения, VALUE - сервисы '''
+
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='services').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+
         
     return render_template(
         'services.html',
         services=result,
         page_title=page_title,
-        division=division
+        division=division,
+        keywords=keywords,
+        description=description
         )
 
 
@@ -163,10 +184,21 @@ def service_item(service_id):
     else:
         item = []
     # ----- ----- -----  
+    
+    keywords=''
+    description=''
+    # -------------------------------------
+    if item[0]:
+        keywords=item[0].meta_keywords
+        description=item[0].meta_description
+
 
     return render_template('in_page-service.html',
                             item=result,
-                            personal=personal)
+                            personal=personal,
+                            keywords=keywords,
+                            description=description
+                            )
 
 
 # ====== Врачи ======
@@ -186,10 +218,20 @@ def doctors():
     elif session['lang'] == 'ru': page_title = 'Врачи'
     else: page_title = 'Doctors'
 
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='doctors').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+
     return render_template(
         'doctors.html',
         doctors=doctors,
-        page_title=page_title
+        page_title=page_title,
+        keywords=keywords,
+        description=description
         )
 
 
@@ -210,9 +252,19 @@ def arts():
     elif session['lang'] == 'ru': page_title = 'Полезное'
     else: page_title = 'Usefuls'
 
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='useful').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+
     return render_template(
         'useful.html', arts=art,
-        page_title=page_title
+        page_title=page_title,
+        keywords=keywords,
+        description=description
         )
 
 
@@ -222,12 +274,24 @@ def arts_item(arts_id):
     if 'lang' not in session:
         session['lang'] = 'ru'
     # ----- ----- -----
-    art_item = Art.query.filter_by(id=arts_id).all()
-    if art_item: art_item = art_lang(art_item) 
+    art_item_db = Art.query.filter_by(id=arts_id).all()
+    if art_item_db: art_item = art_lang(art_item_db) 
     else: art_item=[]
     # ----- ----- -----  
 
-    return render_template('in_page-useful.html', art_item=art_item)
+    keywords=''
+    description=''
+    # -------------------------------------
+    if art_item_db[0]:
+        keywords=art_item_db[0].meta_keywords
+        description=art_item_db[0].meta_description
+
+    return render_template(
+        'in_page-useful.html',
+        art_item=art_item,
+        keywords=keywords,
+        description=description
+        )
 
 
 # ====== О нас ======
@@ -236,11 +300,10 @@ def about():
     if 'lang' not in session:
         session['lang'] = 'ru'
     # ----- ----- -----
-    about = About.query.first()
-    if about:
-        about = about_lang(about)  
-    else:
-        about = None
+    about_db = About.query.first()
+    # ----- ----- -----  
+    if about_db: about = about_lang(about_db)  
+    else: about = None
     # ----- ----- -----  
     galary = Galary.query.all()
     # if galary: galary = galary_lang(galary)
@@ -252,11 +315,18 @@ def about():
     elif session['lang'] == 'ru': page_title = 'О нас'
     else: page_title = 'About'
 
+    keywords=''
+    description=''
+    # -------------------------------------
+    if about_db:
+        keywords=about_db.meta_keywords
+        description=about_db.meta_description
 
     return render_template('about.html', 
                             about=about,galary=galary,
-                            page_title=page_title
-                            )
+                            page_title=page_title,
+                            keywords=keywords,
+                            description=description)
 
 
 
@@ -306,12 +376,21 @@ def contacts():
     else: page_title = 'Contact'
 
 
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='contacts').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+
     return render_template(
                             'contacts.html',
                             contacts=contacts,
                             page_title=page_title,
-                            form=form
-                            )
+                            form=form,
+                            keywords=keywords,
+                            description=description)
 
 
 
@@ -373,11 +452,20 @@ def login():
     elif session['lang'] == 'ru': page_title = 'Вход'
     else: page_title = 'Sign in'
 
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='sign_in').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
 
     return render_template(
                             'sign_in.html', form=form,
-                            page_title=page_title
-                            )
+                            page_title=page_title,
+                            keywords=keywords,
+                            description=description)
+
 
 
 
@@ -426,10 +514,42 @@ def serdelete(item_id):
 
 
 
+
+
 @main.route('/make_an_appointment')
 def make_an_appointment():
-    return render_template('make_an_appointment.html')
+    if 'lang' not in session:
+        session['lang'] = 'ru'
+
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='make_an_appointment').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+
+    return render_template(
+        'make_an_appointment.html',
+        keywords=keywords,
+        description=description)
+
+
 
 @main.route('/results')
 def results():
-    return render_template('results.html')
+    if 'lang' not in session:
+        session['lang'] = 'ru'
+
+
+    keywords=''
+    description=''
+    # -------------------------------------
+    meta_tags = MetaTags.query.filter_by(page_name='results').first()
+    if meta_tags:
+        keywords=meta_tags.meta_keywords
+        description=meta_tags.meta_description
+    return render_template(
+        'results.html',
+        keywords=keywords,
+        description=description)

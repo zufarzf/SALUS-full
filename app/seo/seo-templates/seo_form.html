@@ -1,10 +1,9 @@
 {% extends 'base_template/base_template.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/services_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('main.static', filename='CSS/results_style.css') }}">
 <link rel="stylesheet" href="{{ url_for('seo.static', filename='CSS/seo_menu_style.css') }}">
 {% endblock head %}
-
 
 
 
@@ -50,7 +49,6 @@
 
 
 
-
 {% block burger_navbar %}
 <div class="burger_button-nav_bar-item__wrapper">
     {% if session['lang'] == 'ru' %}
@@ -70,11 +68,22 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
+    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="{{ url_for('admin.index') }}"
             class="burger_button-enter header-enter header-sign_up-btn">АДМИНИСТРАЦИЯ</a>
         <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">ВЫЙТИ</a>
     </div>
+    {% elif 'user_login' not in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">РЕГИСТРАЦИЯ</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">ВОЙТИ</a>
+    </div>
+    {% elif 'user_login' in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">ВЫЙТИ</a>
+    </div>
+    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% elif session['lang'] == 'en' %}
@@ -94,11 +103,22 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
+    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="{{ url_for('admin.index') }}"
             class="burger_button-enter header-enter header-sign_up-btn">ADMINISTRATION</a>
         <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">LOG OUT</a>
     </div>
+    {% elif 'user_login' not in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">REGISTRATION</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">SIGN IN</a>
+    </div>
+    {% elif 'user_login' in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">LOG OUT</a>
+    </div>
+    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% else %}
@@ -122,11 +142,22 @@
 
     <!-- burger enter btns -->
     <!-- ------------------------------------------------------------ -->
+    {% if 'admin_login' in session %}
     <div class="burger_button-enter_btns_wrapper">
         <a href="{{ url_for('admin.index') }}"
             class="burger_button-enter header-enter header-sign_up-btn">ADMINISTRATSIYA</a>
         <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">CHIQISH</a>
     </div>
+    {% elif 'user_login' not in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="" class="burger_button-enter header-enter header-sign_up-btn">RO'YXATDAN O'TISH</a>
+        <a href="{{ url_for('main.login') }}" class="burger_button-enter header-enter header-sign_in-btn">KIRISH</a>
+    </div>
+    {% elif 'user_login' in session and 'admin_login' not in session %}
+    <div class="burger_button-enter_btns_wrapper">
+        <a href="{{ url_for('main.logout') }}" class="burger_button-enter header-enter header-sign_in-btn">CHIQISH</a>
+    </div>
+    {% endif %}
     <!-- ------------------------------------------------------------ -->
     <!-- end burger enter btns -->
     {% endif %}
@@ -139,33 +170,75 @@
 
 {% block content %}
 
-<main class="services-main">
+<main class="results-main">
 
 
-    <!-- Page name -->
+    <!-- results blocks container -->
     <!-- ----------------------------------- -->
-    <h1 class="page_title">META TAGS</h1>
+    <div class="results-blocks_container">
+
+        <!-- Block -->
+        <!-- ======================================== -->
+        <div class="results-block results-form_wrapper">
+
+            <!-- Form container -->
+            <!-- ----------------------------------- -->
+            <div class="results-form_container">
+
+                <a href="{{ url_for('seo.seo_menu') }}" class="results-form_text">
+                    Вернуться назад
+                </a>
+
+
+                <!-- Form -->
+                <!-- ----------------------------------- -->
+                <form method="post" action="{{ url_for('seo.seo_form', menu_item=menu_item) }}" class="results-form">
+                    {{ form.hidden_tag() }}
+                    <!-- ----------------------------------- -->
+                    {{ form.keywords(placeholder="Ключевые слова", id="inp_keywords", class="input_style results-input",
+                    cols="30",
+                    rows="10") }}
+                    <!-- ----------------------------------- -->
+                    {{ form.description(placeholder="Описание страницы", id="inp_description", class="input_style
+                    results-input", cols="30",
+                    rows="10") }}
+                    <!-- ----------------------------------- -->
+                    {{ form.submit(value="СОХРАНИТЬ", class="input_submit results-submit") }}
+                    <!-- ----------------------------------- -->
+                </form>
+                <!-- ----------------------------------- -->
+                <!-- end Form -->
+
+                <p style="display: none;" id="keywords" class="hidden_text">{{ keywords }}</p>
+                <p style="display: none;" id="description" class="hidden_text">{{ description }}</p>
+
+
+
+            </div>
+            <!-- ----------------------------------- -->
+            <!-- end Form container -->
+
+        </div>
+        <!-- ======================================== -->
+        <!-- end Block -->
+
+    </div>
     <!-- ----------------------------------- -->
-    <!-- end Page name -->
-
-
-    <!-- ========================================== -->
-    <!-- ========================================== -->
-
-    <nav class="seo_menu">
-        <a href="{{ url_for('seo.seo_form', menu_item='main') }}" class="seo_item">Главная</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='services') }}" class="seo_item">Услуги</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='doctors') }}" class="seo_item">Врачи</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='results') }}" class="seo_item">Результаты</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='useful') }}" class="seo_item">Полезное</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='make_an_appointment') }}" class="seo_item">Записаться</a>
-        <a href="{{ url_for('seo.about_seo_form') }}" class="seo_item">О нас</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='contacts') }}" class="seo_item">Контакты</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='sign_in') }}" class="seo_item">Вход</a>
-        <a href="{{ url_for('seo.seo_form', menu_item='registration') }}" class="seo_item">Регистрация</a>
-    </nav>
+    <!-- end results blocks container -->
 
 
 </main>
 
+
 {% endblock content %}
+
+{% block javaScript %}
+<script>
+    keywords = $('p#keywords').text()
+    description = $('p#description').text()
+
+    $('#inp_keywords').text(keywords)
+    $('#inp_description').text(description)
+
+</script>
+{% endblock javaScript %}

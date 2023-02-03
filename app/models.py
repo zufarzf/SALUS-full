@@ -192,3 +192,13 @@ class Users(db.Model):
 #     __tablename__ = 'patients'
 
 #     id = db.Column(db.Integer, primary_key=True)
+
+
+class MetaTags(db.Model):
+    __tablename__ = 'meta_tags'
+
+    id = db.Column(db.Integer, primary_key=True)
+    page_name = db.Column(db.Text)
+    
+    meta_keywords = db.Column(db.Text)
+    meta_description = db.Column(db.Text)
