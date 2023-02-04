@@ -1,6 +1,7 @@
 /__pycache__
 /migrations
 /env
+/venv
 /instance
 /app/data.db
 /app/__pycache__

@@ -27,6 +27,7 @@ Mako==1.2.4
 MarkupSafe==2.1.1
 packaging==23.0
 Pillow==9.4.0
+PyMySQL==1.0.2
 python-dateutil==2.8.2
 python-telegram-bot==13.14
 pytz==2022.7.1
