@@ -73,9 +73,10 @@ def main_page():
     
     if about: about = about_lang(about)
     else: about = ''
-    art_left = art_lang(art)[0:3]
+    art_left = []
+    if art_lang(art): art_left = art_lang(art)[0:3]
     art_right = {}
-    if art_lang(art)[3]: art_right = art_lang(art)[3]
+    if art_lang(art): art_right = art_lang(art)[3]
 
     keywords=''
     description=''
